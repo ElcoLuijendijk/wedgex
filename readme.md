@@ -1,5 +1,7 @@
 # Wedgex
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4571576.svg)](https://doi.org/10.5281/zenodo.4571576)
+
 ## Introduction
 
 Wedgex is a new analytical solution for the steady-state deformation and exhumation of an orogenic wedge, i.e. a simplified geometrical representation of a mountain belt. The analytical equation represents transport along a basal detachment, uniform internal deformation, basal and frontal accretion. The resulting rock particle trajectories and can be compared to thermochronology data that record the temperature history of rocks, such as apatite or zircon (U-Th)/He or fission track data.
@@ -71,6 +73,14 @@ Note that all of these modules and Jupyter are included in a Python distribution
 ## Authors
 **Elco Luijendijk**, University of Göttingen & RWTH Aachen, <elco.luijendijk-at-posteo.de>
 
+
+## Reference
+
+This notebook has been published at Zenodo. Please cite the following reference if you publish any work that uses this notebook:
+
+Luijendijk, E. (2021). wedgex: calculate the exhumation of an orogenic wedge. Zenodo. [https://doi.org/10.5281/zenodo.4571576](https://doi.org/10.5281/zenodo.4571576)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4571576.svg)](https://doi.org/10.5281/zenodo.4571576)
 
 ## License
 This project is licensed under the GNU lesser general public license (LGPL v3). See the [LICENSE.txt](LICENSE.txt) file for details.
