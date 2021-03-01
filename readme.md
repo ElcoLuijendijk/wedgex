@@ -2,25 +2,77 @@
 
 ## Introduction
 
-Wedgex is an analytical model of the exhumation of an orogenic wedge, and consists of two equations that describe the x and y position over time of a particle in an orogenic wedge that is transported over an inclined detachment and that undergoes internal deformation. The analytical equation can be used to calculate the time that a particle was at a certain depth and can be compared to exhumation rates inferred from thermochronological datasets such as apatite or zircon (U-Th)/He or fission track data.
+Wedgex is a new analytical solution for the steady-state deformation and exhumation of an orogenic wedge, i.e. a simplified geometrical representation of a mountain belt. The analytical equation represents transport along a basal detachment, uniform internal deformation, basal and frontal accretion. The resulting rock particle trajectories and can be compared to thermochronology data that record the temperature history of rocks, such as apatite or zircon (U-Th)/He or fission track data.
 
-The jupyter notebook [wedgex_derivation_equations.ipynb](wedgex_derivation_equations.ipynb) contains the derivation of the equations for the velocity and position of particles in an orogenic wedge.
+Conceptual model of an orogenic wedge  |  Modelled particle trajectories
+:-------------------------------------:|:-------------------------------------:
+![](fig/Wedge_BAFA_small.jpg)          |  ![](fig/wedgex_model_calibrated_small.png)
 
-The jupyter notebook [wedgex_test.ipynb](wedgex_test.ipynb) contains a series of tests of the analytical solutions that test the calculated particle positions to particle positions calculated using a numerical backstepping procedure. 
 
-The jupyter notebook [wedgex_model.ipynb](wedgex_model.ipynb) contains a working version of the model that calculates particle trajectories and thermochronometer ages and compares these to measured thermochronometer ages. 
+## Getting started
+
+### with Jupyter notebooks:
+
+The jupyter notebook [wedgex_model_single_model_run.ipynb](wedgex_model_single_model_run.ipynb) can be used to calculate particle trajectories and thermochronometer ages and compares these to measured thermochronometer ages. 
+
+The jupyter notebook [wedgex_multiple_runs_and_calibration.ipynb](wedgex_multiple_runs_and_calibration.ipynb) to calibrate parameter values to find the best match to thermochronometer data.
+
+Both notebooks [wedgex_model_single_model_run.ipynb](wedgex_model_single_model_run.ipynb), [wedgex_multiple_runs_and_calibration.ipynb](wedgex_multiple_runs_and_calibration.ipynb) use wedge geometry data based on a cross-section in the Himalayas by Long et al. (2012) and McQuarrie and Ehlers (2015) and compare the results to thermochronology data reported in these papers.
+
+
+### or by running a minimal example:
+
+The wedge exhumation equations are contained in a python module named [wedgeqs.py](wedgeqs.py). See the [minimal_example.py](minimal_example.py) below on how to use the equation to calculate x and y positions of a rock particle inside the wedge over time:
+
+````python
+import numpy as np
+import matplotlib.pyplot as pl
+import wedgeqs
+
+t = np.linspace(0, -10e6, 101)
+x0, L = 100e3, 200e3
+alpha, beta = 0.05, -0.15
+vc, vd, vxa, vya = -8e-3, -2e-3, 0.0, 0.0
+
+x, y = wedgeqs.analytical_solution(t, x0, alpha, beta, L, vc, vd, vxa, vya)
+
+fig, ax = pl.subplots(1, 1)
+sc = ax.scatter(x/1000.0, y/1000.0, c=t/1e6, s=5)
+cb = fig.colorbar(sc, shrink=0.5)
+cb.set_label('Age (Ma)')
+ax.set_xlabel('Distance (km)')
+ax.set_ylabel('Elevation (km)')
+fig.show()
+````
+
+This example is also included as a python script: [minimal_example.py](minimal_example.py). Run the minimal example by navigating to the wedgex directory and typing the following in a terminal or windows powershell: `python minimal_example.py`
+
+
+## Installation
+
+* Download the zip file or [clone](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) the repository.
+* Unzip the file, navigate to the directory and run the minimal example or one of the [Jupyter](https://jupyter.org/) notebooks.
 
 
 ## Required Python modules
 
 Wedgex requires the following Python modules:
-[numpy](https://numpy.org/), [matplotlib](https://matplotlib.org/), [pandas](https://pandas.pydata.org/)
+[numpy](https://numpy.org/), [matplotlib](https://matplotlib.org/), [pandas](https://pandas.pydata.org/), [scipy](https://www.scipy.org/) and [scikit-learn](https://scikit-learn.org)
 
 In addition [Jupyter](https://jupyter.org/) needs to be installed to be able to run the notebooks.
 
 Note that all of these modules and Jupyter are included in a Python distribution such as [Anaconda](https://www.anaconda.com/distribution/)
 
+## Additional notebooks
+
+* The notebook [model_validation/wedgex_validation.ipynb](model_validation/wedgex_validation.ipynb) contains additional model validation figures and can be used to reproduce several figures in the accompanying publication.
+* The notebook [utilities/extract_xsection_data.ipynb](utilities/extract_xsection_data.ipynb) can be used to automatically extract thermochronology data along a cross-section. The cross-section is defined by a shapefile ([data/xsections.shp](data/xsections.shp)), and the thermchronology data are located in a csv file ([data/thermochron_data.csv](data/thermochron_data.csv)).
+
+## Authors
+**Elco Luijendijk**, University of Göttingen & RWTH Aachen, <elco.luijendijk-at-posteo.de>
 
 
+## License
+This project is licensed under the GNU lesser general public license (LGPL v3). See the [LICENSE.txt](LICENSE.txt) file for details.
 
 
