@@ -15,7 +15,7 @@ Conceptual model of an orogenic wedge  |  Modelled particle trajectories, exhuma
 
 ### with a Jupyter notebook:
 
-Run the jupyter notebook [wedgex.ipynb](wedgex_multiple_runs_and_calibration.ipynb) to calculate particle trajectories and thermochronometer ages and, optionally, to calibrate parameter values to find the best match to thermochronometer data.
+Run the jupyter notebook [wedgex.ipynb](wedgex.ipynb) to calculate particle trajectories and thermochronometer ages and, optionally, to calibrate parameter values to find the best match to thermochronometer data.
 
 
 ### or by running a minimal example:
