@@ -6,20 +6,16 @@
 
 Wedgex is a new analytical solution for the steady-state deformation and exhumation of an orogenic wedge, i.e. a simplified geometrical representation of a mountain belt. The analytical equation represents transport along a basal detachment, uniform internal deformation, basal and frontal accretion. The resulting rock particle trajectories and can be compared to thermochronology data that record the temperature history of rocks, such as apatite or zircon (U-Th)/He or fission track data.
 
-Conceptual model of an orogenic wedge  |  Modelled particle trajectories
+Conceptual model of an orogenic wedge  |  Modelled particle trajectories, exhumation and thermochronology data
 :-------------------------------------:|:-------------------------------------:
 ![](fig/Wedge_BAFA_small.jpg)          |  ![](fig/wedgex_model_calibrated_small.png)
 
 
 ## Getting started
 
-### with Jupyter notebooks:
+### with a Jupyter notebook:
 
-The jupyter notebook [wedgex_model_single_model_run.ipynb](wedgex_model_single_model_run.ipynb) can be used to calculate particle trajectories and thermochronometer ages and compares these to measured thermochronometer ages. 
-
-The jupyter notebook [wedgex_multiple_runs_and_calibration.ipynb](wedgex_multiple_runs_and_calibration.ipynb) to calibrate parameter values to find the best match to thermochronometer data.
-
-Both notebooks [wedgex_model_single_model_run.ipynb](wedgex_model_single_model_run.ipynb), [wedgex_multiple_runs_and_calibration.ipynb](wedgex_multiple_runs_and_calibration.ipynb) use wedge geometry data based on a cross-section in the Himalayas by Long et al. (2012) and McQuarrie and Ehlers (2015) and compare the results to thermochronology data reported in these papers.
+Run the jupyter notebook [wedgex.ipynb](wedgex_multiple_runs_and_calibration.ipynb) to calculate particle trajectories and thermochronometer ages and, optionally, to calibrate parameter values to find the best match to thermochronometer data.
 
 
 ### or by running a minimal example:
@@ -81,6 +77,7 @@ This notebook has been published at Zenodo. Please cite the following reference 
 Luijendijk, E. (2021). wedgex: calculate the exhumation of an orogenic wedge. Zenodo. [https://doi.org/10.5281/zenodo.4571576](https://doi.org/10.5281/zenodo.4571576)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4571576.svg)](https://doi.org/10.5281/zenodo.4571576)
+
 
 ## License
 This project is licensed under the GNU lesser general public license (LGPL v3). See the [LICENSE.txt](LICENSE.txt) file for details.
