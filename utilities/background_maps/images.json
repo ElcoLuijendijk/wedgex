@@ -1,0 +1,24 @@
+{"__comment__": "JSON file specifying the image to use for a given type/name and resolution. Read in by cartopy.mpl.geoaxes.read_user_background_images.",
+  "BM": {
+    "__comment__": "Blue Marble Next Generation, July ",
+    "__source__": "https://neo.sci.gsfc.nasa.gov/view.php?datasetId=BlueMarbleNG-TB",
+    "__projection__": "PlateCarree",
+    "low": "blue_marble_lowres.png",
+    "high": "blue_marble_hires.png"},
+
+    "NE_gray": {
+    "__comment__": "Natural Earth - Gray Earth with Shaded Relief, Hypsography, and Ocean Bottom",
+    "__source__": "https://www.naturalearthdata.com/downloads/50m-gray-earth/gray-earth-with-ocean-bottom",
+    "__projection__": "PlateCarree",
+    "low": "GRAY_50M_SR_OB_25perc.png",
+    "medium": "GRAY_50M_SR_OB_50perc.png",
+    "high": "GRAY_50M_SR_OB.png"},
+
+    "NE": {
+    "__comment__": "Natural Earth - Natural Earth I with Shaded Relief and Water",
+    "__source__": "https://www.naturalearthdata.com/downloads/50m-natural-earth-1/50m-natural-earth-i-with-shaded-relief-and-water/",
+    "__projection__": "PlateCarree",
+    "low": "NE1_50M_SR_W_25perc.png",
+    "medium": "NE1_50M_SR_W_50perc.png",
+    "high": "NE1_50M_SR_W.png"}
+}
