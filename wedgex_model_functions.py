@@ -68,7 +68,83 @@ def run_model_multiple_samples(t, x0s, alpha, beta, L, vc, vd, vxa, vya):
     return xp, yp, dp
 
 
-def calculate_cooling_ages(t, x_samples, d_samples, alpha, resetting_temperatures_samples, 
+
+def calculate_cooling_ages(t, x_samples, d_samples, resetting_temperatures_samples, T_history_samples,
+                           surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
+                           default_exhumation_rate, L,
+                           calculate_non_reset_age=True, buffer=0.99,
+                           verbose=False, debug=True):
+    
+    
+    n_samples = len(d_samples)
+    calculate_non_reset_age = True
+    buffer = 0.99
+
+    modelled_age_samples = np.zeros((n_samples))
+
+    for j, resetting_temperature_sample,  xs, ds, T_history_sample in zip(list(range(n_samples)), 
+                                                                 resetting_temperatures_samples, 
+                                                                 x_samples, d_samples, T_history_samples):
+
+
+        # find indices of steps when particle is inside the model domain
+        ind = (np.isnan(ds) == False) & (np.isnan(T_history_sample) == False)
+
+        # if the particle is in the model domain at least part of the time
+        if np.any(ind):
+
+            #T_history_sample = surface_Ts + ds * geothermal_gradient
+
+            # get age of sample for section in the model domain
+            # if max temp < resetting temp
+            if T_history_sample[ind].max() > resetting_temperature_sample:
+                age_int = np.interp(resetting_temperature_sample, T_history_sample[ind], t[ind])
+            # otherwise assume that the sample was at the same temp as the last 
+            elif calculate_non_reset_age is True:
+
+                ind2 = np.isnan(xs) == False
+                #if np.any(ind2):
+                #    print(xs[ind2].max())
+
+                # todo: figure out if sample comes from foreland or hinterland
+                #buffer = 0.99
+                if np.any(xs >= (L * buffer)):
+                    from_foreland = False
+                    age_int = np.nan
+                else:
+
+                    age_int = - (resetting_temperature_sample - surface_temperature_sea_lvl) \
+                                / (default_exhumation_rate * geothermal_gradient)
+            else:
+                age_int = np.nan
+
+        elif calculate_non_reset_age is True:
+
+            ind2 = np.isnan(xs) == False
+            if np.any(ind2):
+                print(xs[ind2].max())
+
+            # todo: figure out if sample comes from foreland or hinterland
+            if np.any(ind2) and np.max(xs[ind2]) >= L:
+                from_foreland == False
+                age_int = np.nan
+
+            else:
+
+                age_int = - (resetting_temperature_sample - surface_temperature_sea_lvl) \
+                                / (default_exhumation_rate * geothermal_gradient)
+        else:
+            age_int = np.nan
+
+        if np.isnan(age_int) == False:
+            modelled_age_samples[j] = -age_int / 1e6
+        else:
+            modelled_age_samples[j] = np.nan
+        
+    return modelled_age_samples
+        
+
+def calculate_cooling_ages_old(t, x_samples, d_samples, alpha, resetting_temperatures_samples, 
                            surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
                            default_exhumation_rate, L,
                            calculate_non_reset_age=True, buffer=0.99,

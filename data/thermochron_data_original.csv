@@ -1,0 +1,747 @@
+﻿figure,cross-section_name,id,sample,unit,lithology,longitude,latitude,elevation,age,pooled_age,mean_age,age_error_1s,age_error_pooled_1s,age_error_mean_1s,age_error_2s_plus,age_error_2s_minus,system,reference
+Diagram A - Eastern Buthan,Trashigang Cross Section,,BU07-53,,sandstone,91.48011111,26.86572222,655,8.33,,,0.080808081,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-54,,quartzite,91.48027778,26.87497222,700,7.6,,,0.070707071,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-33,,diamictite,91.54794444,26.93311111,1710,11.16,,,0.116161616,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-35,,quartzite,91.54761111,26.95991667,1580,10.48,,,0.101010101,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-36,,quartzite,91.53083333,26.97441667,1785,10.8,,,0.106060606,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,NBH-18,,quartzite,91.52072,27.012,1815,11.6,,,0.136363636,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-37,,quartzite,91.50141667,27.02675,2385,11.24,,,0.111111111,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-42,,quartzite,91.52088889,27.08486111,2165,9.42,,,0.085858586,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-43B,,quartzite,91.56708333,27.1345,2315,9.28,,,0.085858586,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BH-57,,quartzite,91.44656,27.27869,605,7.26,,,0.055555556,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-55,,quartzite,91.52122222,27.24222222,2350,8.97,,,0.101010101,,,,,ZHe,Long_2012(Tectonics)
+,Trashigang Cross Section,,BH-78,,schist,91.63897,27.35144,1000,7.09,,,0.070707071,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-29,,diamictite,91.23983333,26.87802778,465,7.5,,,1.2,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-27,,diamictite,91.23072222,26.90566667,975,8.86,,,1.12,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-26,,quartzite,91.22816667,26.90827778,975,9.86,,,0.87,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-24,,quartzite,91.19019444,26.95358333,505,8.52,,,1.2,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-22,,quartzite,91.20627778,27.00844444,260,9.82,,,0.285,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-21,,quartzite,91.22197222,27.07247222,950,8.62,,,0.72,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-18,,quartzite,91.25686111,27.10705556,1580,9.68,,,0.215,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-14,,quartzite,91.24,27.16608333,600,9.62,,,0.43,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-13,,quartzite,91.23341667,27.18844444,645,9.97,,,1.81,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BH-342,,orthogneiss,91.29907,27.26742,2210,8.55,,,0.435,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-12,,quartzite,91.20288889,27.27808333,995,8.6,,,0.2,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-11,,orthogneiss,91.19339,27.39969,840,7.16,,,0.075,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-9,,quartzite,91.18111111,27.40255556,930,6.7,,,0.065,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,NBH-11,,quartzite,91.18354,27.50625,1365,6.48,,,0.4505,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-6,,quartzite,91.21519444,27.59366667,1170,5.62,,,0.165,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BH-101,,orthogneiss,91.10072,27.34133,2380,8.37,,,0.26,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BH-102,,paragneiss,91.05517,27.329,2795,8.18,,,0.07,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BH-386,,paragneiss,90.93286111,27.4105,3520,6.42,,,0.06,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BH-38,,paragneiss,91.14425,27.54036,2145,5.49,,,0.06,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BH-378,,paragneiss,91.20487,27.66549,1195,4.05,,,0.58,,,,,ZHe,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BH357,,gneiss,91.29827,27.98563,4085,7.42,,,0.55,,,,,ZHe,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BT0962,,paragneiss,91.13331,27.76839,2360,4.793,,,0.0425,,,,,ZHe,Adams_2013(Lithosphere)
+,Kuru Chu Cross Section,,BT0963,,paragneiss,91.13331,27.74961,2309,4.41,,,0.27,,,,,ZHe,Adams_2013(Lithosphere)
+,Kuru Chu Cross Section,,BT0964,,orthogneiss,91.13753,27.74289,1882,4.23,,,0.135,,,,,ZHe,Adams_2013(Lithosphere)
+,Trashigang Cross Section,,BU07-33,,diamictite,91.54794444,26.93311111,1710,5.69,,,0.52,,,,,AFT,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-35,,quartzite,91.54761111,26.95991667,1580,5.82,,,0.64,,,,,AFT,Long_2012(Tectonics)
+,Trashigang Cross Section,,BU07-37,,quartzite,91.50141667,27.02675,2385,6.27,,,1.17,,,,,AFT,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-29,,diamictite,91.23983333,26.87802778,465,3.01,,,0.6,,,,,AFT,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-27,,diamictite,91.23072222,26.90566667,975,3.96,,,0.69,,,,,AFT,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-12,,quartzite,91.20288889,27.27808333,995,3.44,,,1,,,,,AFT,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-11,,orthogneiss,91.19339,27.39969,840,4.52,,,0.73,,,,,AFT,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BH38,,paragneiss,91.14425,27.54036,2135,5.2,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH63,,gneiss,91.51898,27.31485,672,4,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH339,,gneiss,91.32806,27.3046,2026,3.6,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH342,,gneiss,91.29907,27.26742,2219,4,,,0.5,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH351,,leucogranite,91.30357,27.97318,3870,3,,,1.2,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH352,,gneiss,91.29016,27.97416,3880,4.1,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH355,,leucogranite,91.2987,27.99005,4275,3.8,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH357,,gneiss,91.29827,27.98563,4085,4,,,0.2,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH362,,leucogranite,91.29901,27.9975,4300,4.2,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH363,,leucogranite,91.37263,27.96956,3610,2.5,,,0.2,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH378,,paragneiss,91.20487,27.66549,1180,2.7,,,0.2,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH380,,leucogranite,91.23065,27.26965,2150,8.4,,,1.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,Kuru Chu Cross Section,,BH52,,,91.554667,27.236056,2350,7.8,,,1.4,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH53,,,91.548083,27.237361,2405,6.9,,,1.3,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH333,,,91.9237,27.27504,4160,7.5,,,0.6,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH60,,,91.480667,27.282361,795,4.2,,,0.5,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH61,,,91.491,27.303417,780,5.4,,,0.4,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH100/2,,,91.153889,27.308806,1720,5.9,,,1.2,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH329,,,91.792417,27.311806,3050,5.1,,,0.7,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH102,,,91.055167,27.329,2795,6.5,,,0.6,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH101,,,91.100722,27.341333,2380,6.1,,,0.6,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH90,,,91.574528,27.344972,910,3.6,,,0.5,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH64,,,91.554472,27.350056,825,3,,,0.7,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH74,,,91.687556,27.362556,1415,4.6,,,0.7,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH75,,,91.687556,27.362556,1415,3.6,,,0.3,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH324,,,91.596833,27.374361,1995,4.8,,,0.5,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH94,,,91.599833,27.375333,2050,6.6,,,0.4,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH334,,,91.919389,27.384417,2890,3.9,,,0.4,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH104,,,90.996972,27.399139,3710,8.6,,,0.8,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH100,,,91.563722,27.411389,905,5.9,,,0.4,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH337,,,91.892722,27.415528,2645,3.5,,,0.4,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH72,,,91.554722,27.465,1420,5.5,,,0.4,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH66,,,91.561139,27.551361,930,4.4,,,0.6,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BH70,,,91.499528,27.584167,1760,3.7,,,0.3,,,,,AFT,Grujic_2006(Geology)*1
+,Kuru Chu Cross Section,,BU07-29,,diamictite,91.23983333,26.87802778,465,1020.91,,,6.735,,,,,MAr,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-22,,quartzite,91.20627778,27.00844444,260,14.78,,,0.17,,,,,MAr,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-21,,quartzite,91.22197222,27.07247222,950,1395.7,,,7.5,,,,,MAr,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-12,,quartzite,91.20288889,27.27808333,995,12.11,,,0.23,,,,,MAr,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-11,,orthogneiss,91.19339,27.39969,840,11.78,,,0.205,,,,,MAr,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-9,,quartzite,91.18111111,27.40255556,930,12.95,,,0.235,,,,,MAr,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,NBH-11,,quartzite,91.18354,27.50625,1365,9.18,,,0.085,,,,,MAr,Long_2012(Tectonics)
+,Kuru Chu Cross Section,,BU07-6,,quartzite,91.21519444,27.59366667,1170,8.4,,,0.385,,,,,MAr,Long_2012(Tectonics)
+Diagram B Western Buthan ,,,BU07-60,,quartzite,89.39319,26.85456,355,3.36,,,0.05,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU07-63,,quartzite,89.43622,26.89172,1200,7.64,,,0.16,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU07-73,,quartzite,89.5805,27.02925,1895,13.26,,,0.21,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU07-75,,quartzite,89.54175,27.152,2265,8.05,,,0.13,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU07-76,,quartzite,89.51678,27.22606,2020,3.06,,,0.04,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU07-79,,quartzite,89.57497,27.33758,2188,6.6,,,0.1,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU08-135,,quartzite,89.46922,26.91692,1865,9.09,,,0.15,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU10-64,,quartzite,89.11122,26.89972,590,3.24,,,0.08,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU10-65,,phyllite,89.12011,26.90158,945,1.86,,,0.1,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU10-68,,quartzite,89.14875,26.89614,1370,6.03,,,0.13,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU10-71,,quartzite,89.20083,26.89519,1595,8.58,,,0.12,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU10-89,,quartzite,89.90786,26.85717,880,9.74,,,0.3,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU10-90,,quartzite,89.94411,26.79442,198,8.54,,,0.26,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU10-93,,quartzite,89.86333,26.74447,140,8.93,,,0.26,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU11-01,,paragneiss,89.58273,27.02924,1860,9.06,,,0.18,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BU11-02,,paragneiss,89.5565,27.0663,1545,8.35,,,0.13,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BH-411,,paragneiss,89.41996,27.46156,2335,6.42,,,0.11,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BH-424,,quartzite,89.42762,27.38741,2274,6.8,,,0.11,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BH-432,,quartzite,89.30901,27.36241,3042,6.87,,,0.13,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BH-413,,quartzite,89.47229,27.34339,2182,6.99,,,0.11,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BH-415,,orthogneiss,89.74973,27.49078,3123,6.03,,,0.1,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BH-401,,orthogneiss,89.99908,27.504,1483,5.03,,,0.08,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BH109,,quartzite,89.39972,27.44222,2400,6.4,,,0.11,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,F01a,,quartzite,89.409061,26.862184,644,6.22,,,0.13,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,F04,,orthogneiss,89.459331,26.907234,1751,9.15,,,0.18,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,F07,,quartzite,89.552425,27.189091,2153,7.7,,,0.18,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,F05,,paragneiss,89.574151,27.02737,1881,7.66,,,0.13,,,,,ZHe,McQuarrie_2014(E&P_Science_Letters)
+,,,BH211,,augengneiss,89.80578,28.1714,4400,8.67,,,0.31,,,,,ZHe,Coutland_2014(AGU_Publications)
+,,,BH406,,migmatite,89.82001,27.52181,1700,6.15,,,0.08,,,,,ZHe,Coutland_2014(AGU_Publications)
+,,,BHF05,,gneiss,89.57415,27.02737,1864,7.74,,,0.44,,,,,ZHe,Coutland_2014(AGU_Publications)
+,,,BH260,,migmatite,89.7222,28.07293,3773,10.44,,,0.61,,,,,ZHe,Coutland_2014(AGU_Publications)
+,,,BT0987,,pelitic schist,89.51972,27.4652,2805,6.89,,,0.19,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0988,,orthogneiss,89.52432,27.44978,2655,6.62,,,0.24,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0989,,pelitic schist,89.55662,27.42062,2405,6.63,,,0.21,,,,,ZHe,Adams_2015(Tectonics)
+,,,BH161,,migmatite,89.51372,28.02333,4086,4.2,,,0.6,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH163,,migmatite,89.58878,28.06583,4177,4.8,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH164,,leucogranite,89.60957,28.06222,4248,4.5,,,0.6,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH211,,augengneiss,89.80578,28.1714,4400,5.3,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH284,,quartzite,89.72347,28.14491,4189,6.3,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH406,,migmatite,89.82001,27.52181,1700,3,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH408,,micaschist,89.7538,27.50177,2625,2.4,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH409,,gneiss,89.76088,27.48373,2910,4.3,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH411,,migmatite,89.41996,27.46156,2339,4.7,,,0.5,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH412,,gneiss,89.41937,27.45803,2480,4.8,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH413,,quartzite,89.47229,27.34339,2320,3.8,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH415,,migmatite,89.74973,27.49078,3123,3.7,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH416,,augengneiss,89.72231,27.47863,2640,5.9,,,1,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH417,,gneiss,89.695,27.44078,2640,5,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH424,,quartzite,89.42762,27.38741,2500,4,,,0.7,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH426,,quartzite,89.37143,27.37223,3390,5.5,,,1.1,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH430,,leucogranite dyke in quartzite,89.34159,27.37169,3970,3.3,,,0.6,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH431,,calc-…,89.31352,27.37272,3600,5,,,0.9,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH436,,migmatite,89.55313,27.07518,2230,6.9,,,0.5,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH437,,migmatite,89.55054,27.1306,2550,7.9,,,0.6,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH438,,micaschist,89.54089,27.15421,2470,5.9,,,0.5,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH651,,leucogranite,89.29044,27.69862,3540,3.9,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH683,,augengneiss,89.51613,27.97138,4400,5.2,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH686,,gneiss,89.55855,28.03493,5008,3.9,,,0.5,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH687,,gneiss,89.56281,28.04786,4720,4.2,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH689,,migmatite,89.58826,28.06487,4125,3.6,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH695,,migmatite,89.62974,28.06862,3795,4.8,,,0.5,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,02-102F,,02-102F,89.5485,27.3146,2116,6.2,,,0.4,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,02-232F,,02-232F,89.80645,27.78538,3086,2.3,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,02-235F,,02-235F,89.74823,27.73522,1669,2.2,,,0.3,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BHF01a,,schist,89.40906,26.86218,650,2.5,,,0.6,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BHF01b,,schist,89.40906,26.86218,701,2.4,,,0.6,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BHF02,,,89.43518,26.89151,1250,6.1,,,1.5,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BHF04,,augengneiss,89.45933,26.90723,1751,5.6,,,1,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BHF05,,gneiss,89.57415,27.02737,1864,6.5,,,0.8,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BHF06,,gneiss,89.55721,27.06583,1539,5.9,,,0.6,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BHF07,,micaschist,89.55243,27.18909,2153,6.2,,,0.6,,,,,AFT,Coutland_2014(AGU_Publications)
+,,,BH229,,gneiss,89.33608,27.79572,4729,4.4,,,0.5,,,,,AFT,Grujic_2006(Geology)*2
+,,,BH109,,quartzite,89.39972,27.44222,2400,6.1,,,0.4,,,,,AFT,Grujic_2006(Geology)*2
+,,,F01a,,quartzite,89.409061,26.862184,644,1.8,,,0.6,,,,,AFT,Grujic_2006(Geology)*2
+,,,F04,,orthogneiss,89.459331,26.907234,1751,1.4,,,0.6,,,,,AFT,Grujic_2006(Geology)*2
+,,,F07,,quartzite,89.552425,27.189091,2153,3.5,,,0.6,,,,,AFT,Grujic_2006(Geology)*2
+,,,F06,,gneiss,89.557211,27.065828,1545,6.5,,,0.8,,,,,AFT,Grujic_2006(Geology)*2
+,,,F05,,paragneiss,89.574151,27.02737,1881,6.7,,,0.8,,,,,AFT,Grujic_2006(Geology)*2
+,,,F17,,paragneiss,89.695204,27.441718,2524,2.6,,,0.6,,,,,AFT,Grujic_2006(Geology)*2
+,,,F08,,gneiss,89.748838,27.490287,3113,4.1,,,0.7,,,,,AFT,Grujic_2006(Geology)*2
+,,,BH171,,migmatite,89.77081,27.69294,1440,2.3,,,0.5,,,,,AFT,Grujic_2006(Geology)*2
+,,,F09,,gneiss,89.796,27.5124,1953,3.7,,,0.7,,,,,AFT,Grujic_2006(Geology)*2
+,,,F14,,gneiss,89.906482,27.450639,1192,2.8,,,0.7,,,,,AFT,Grujic_2006(Geology)*2
+,,,F10,,gneiss,89.911594,27.363505,1044,3.8,,,0.6,,,,,AFT,Grujic_2006(Geology)*2
+,,,F16,,Augen gneiss,89.96202,27.506429,1399,2.2,,,0.5,,,,,AFT,Grujic_2006(Geology)*2
+,,,F13,,paragneiss,89.986095,27.29079,881,1.4,,,0.5,,,,,AFT,Grujic_2006(Geology)*2
+,,,F13b,,paragneiss,89.986095,27.29079,881,4.1,,,0.75,,,,,AFT,Grujic_2006(Geology)*2
+,,,F11,,pegmatite,90.036966,27.26311,710,5.3,,,1,,,,,AFT,Grujic_2006(Geology)*2
+,,,F12,,gneiss,90.07618,27.032043,361,2,,,0.4,,,,,AFT,Grujic_2006(Geology)*2
+,,,BU11-02,,paragneiss,89.5565,27.0663,1545,11,,,0.035,,,,,MAr,McQuarrie_2014(E&P_Science_Letters)
+,,,BU11-04,,paragneiss,89.54356,27.14964,2255,11.66,,,0.1,,,,,MAr,McQuarrie_2014(E&P_Science_Letters)
+,,,WC-1,,detrital muscovite ,89.63,27.5945,2600,11.61,,,0.33,,,,,MAr,Tshering_2007(PhD thesis)*3
+,,,WC-2,,detrital muscovite ,89.6315,27.5888,2587,11.73,,,0.62,,,,,MAr,Tshering_2007(PhD thesis)*3
+,,,WC-3,,detrital muscovite ,89.6388,27.5728,2502,11.74,,,0.72,,,,,MAr,Tshering_2007(PhD thesis)*3
+,,,WC-4,,detrital muscovite ,89.6498,27.5363,2425,11.51,,,0.655,,,,,MAr,Tshering_2007(PhD thesis)*3
+,,,WC-5,,detrital muscovite ,89.6412,27.5007,2335,10.57,,,0.58,,,,,MAr,Tshering_2007(PhD thesis)*3
+,,,BT0987,,pelitic schist,89.51972,27.4652,2805,9.689,,,0.019,,,,,MAr,Adams_2015(Tectonics)
+,,,BT0988,,orthogneiss,89.52432,27.44978,2655,9.451,,,0.0155,,,,,MAr,Adams_2015(Tectonics)
+,,,BT0989,,pelitic schist,89.55662,27.42062,2405,9.576,,,0.045,,,,,MAr,Adams_2015(Tectonics)
+,,,BT0988,,orthogneiss,89.52432,27.44978,2655,9.835,,,0.012,,,,,BAr,Adams_2015(Tectonics)
+,,,BT0989,,pelitic schist,89.55662,27.42062,2405,8.66,,,0.0135,,,,,BAr,Adams_2015(Tectonics)
+,,,BH406,,migmatite,89.82001,27.52181,1700,10.6,,,1.4,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH408,,micaschist,89.7538,27.50177,2625,8.1,,,1,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH409,,gneiss,89.76088,27.48373,2910,11.3,,,0.9,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH411,,migmatite,89.41996,27.46156,2339,8.1,,,0.9,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH412,,gneiss,89.41937,27.45803,2480,7.9,,,1.1,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH413,,quartzite,89.47229,27.34339,2320,10.3,,,0.8,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH415,,migmatite,89.74973,27.49078,3123,11.2,,,0.8,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH424,,quartzite,89.42762,27.38741,2500,9.3,,,1,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH426,,quartzite,89.37143,27.37223,3390,10,,,1.1,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BH428,,quartzite,89.84515,27.377,3675,13.5,,,1.6,,,,,ZFT,Coutland_2014(AGU_Publications)
+,,,BT0987,,pelitic schist,89.51972,27.4652,2805,5.89,,,0.19,,,,,AHe,Adams_2015(Tectonics)
+,,,BT0988,,orthogneiss,89.52432,27.44978,2655,5.9,,,0.495,,,,,AHe,Adams_2015(Tectonics)
+,,,BT0989,,pelitic schist,89.55662,27.42062,2405,6.4,,,0.9,,,,,AHe,Adams_2015(Tectonics)
+,,,BH163,,migmatite,89.58878,28.06583,4177,5.7,,,0.8,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH409,,gneiss,89.76088,27.48373,2910,5.4,,,0.6,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH689,,migmatite,89.58826,28.06487,4125,3.2,,,0.4,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH161,,migmatite,89.51372,28.02333,4086,5.5,,,3.3,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BHF04,,augengneiss,89.45933,26.90723,1751,3.7,,,0.7,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,F09,,gneiss,89.796,27.5124,1953,2.9,,,0.2,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,02-102F,,02-102F,89.5485,27.3146,2116,6,,,0.3,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,02-235F,,02-235F,89.74823,27.73522,1669,2.7,,,0.2,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,02-104F,,02-104F,89.7626,27.49077,2852,6.5,,,1.2,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH438,,micaschist,89.54089,27.15421,2470,6.5,,,0.4,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH437,,migmatite,89.55054,27.1306,2550,6.8,,,0.3,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH284,,quartzite,89.72347,28.14491,4189,3.6,,,0.5,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH436,,migmatite,89.55313,27.07518,2230,6.3,,,0.5,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH211,,augengneiss,89.80578,28.1714,4400,4.6,,,1.3,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH287,,marbble,89.68955,28.10946,3874,2.6,,,0.3,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH417,,gneiss,89.695,27.44078,2640,5,,,0.4,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,F08,,gneiss,89.748838,27.490287,3113,5.4,,,0.8,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH109,,quartzite,89.39972,27.44222,2400,5.1,,,0.1,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH111b,,schist,89.42323,27.449,2283,4.9,,,0.1,,,,,AHe,Coutland_2014(AGU_Publications)
+,,,BH412,,gneiss,89.41937,27.45803,2480,5.1,,,0.1,,,,,AHe,Coutland_2014(AGU_Publications)
+Middle Buthan ,,,BT0847,,leucogranite,90.58742,27.51336,3522,6.57,,,0.38,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0848,,orthogneiss,90.57289,27.53239,3213,7.27,,,0.25,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0849,,orthogneiss,90.54692,27.5085,2914,7.06,,,0.06,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0850,,paragneiss,90.53558,27.49989,2622,6.95,,,0.265,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0851,,paragneiss,90.52133,27.4935,2243,6.22,,,0.21,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0852,,paragneiss,90.48383,27.50411,2025,5.99,,,0.365,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0853,,leucogranite,90.45964,27.52039,1876,6.29,,,0.055,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0914,,orthogneiss,90.72881,27.69694,2882,5.06,,,0.09,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0919,,orthogneiss,90.74593,27.66614,2763,5.84,,,0.27,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT0920,,orthogneiss,90.73758,27.6455,2779,4.53,,,0.27,,,,,ZHe,Adams_2015(Tectonics)
+,,,BT1024,,orthogneiss,90.50137,27.49695,1827,7.9,,,0.7,,,,,ZHe,Adams_2015(Tectonics)
+,,,BH103,,,91.006333,27.399139,3300,7.8,,,0.7,,,,,AFT,Grujic_2006(Geology)
+,,,BH346,,,90.43225,27.447417,2390,6.3,,,0.5,,,,,AFT,Grujic_2006(Geology)
+,,,BH345,,,90.481361,27.473,2220,6.2,,,0.4,,,,,AFT,Grujic_2006(Geology)
+,,,BH344,,,90.46825,27.507806,1920,6.1,,,0.4,,,,,AFT,Grujic_2006(Geology)
+,,,BH347,,,90.299306,27.524611,2590,6.9,,,1.1,,,,,AFT,Grujic_2006(Geology)
+Diagram C - Central Nepal ,,,PL3,,,85.0925,27.5648,1400,8.42,,,0.36,,,,,ZHe,Hermann_2010(Journal_of_Geophysical_Research)
+,,,PL4,,,85.0878,27.5676,1650,8.95,,,0.32,,,,,ZHe,Hermann_2010(Journal_of_Geophysical_Research)
+,,,PL5,,,85.0856,27.5669,1840,9.08,,,0.85,,,,,ZHe,Hermann_2010(Journal_of_Geophysical_Research)
+,,,PL6,,,85.0774,27.5703,2100,9.2,,,0.52,,,,,ZHe,Hermann_2010(Journal_of_Geophysical_Research)
+,,,PL7,,,85.084,27.5901,2470,9.46,,,0.76,,,,,ZHe,Hermann_2010(Journal_of_Geophysical_Research)
+,Central Nepal Samples ,,KT-11,GHS?,"lineated micaceous, lithic-rich quartzite",84.18049,27.91966,942,6.9,,,0.6,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,MG-3,Syangja Fm.,placer deposit within white and pink lithic-rich sandstone,84.420116,27.940691,1042,5.5,,,0.1,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,MG-14,Kuncha Fm.,gray and green quartzose schist,84.555083,27.943517,347,4.7,,,0.4,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,MG-16,Ulleri Gneiss,foliated biotite and muscovite-bearing granitoid,84.541333,28.074467,1185,3.1,,,0.4,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,MG-18,Kuncha Fm.,gray and green quartzose schist,84.4588,28.023467,430,3.1,,,0.4,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,MG-20,Syangja Fm.,rippled red and purple variegated quartzite ,84.471667,27.82145,218,5.9,,,2.6,,,,,ZHe,Cross_2014(PhD_Thesis)
+,Other samples,,DR-7 ,GHS Igneous,mylonitic granitoid ,80.592033,29.14835,1865,12.3,,,0.6,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,DR-8,Budiganga Gneiss,mylonitic biotit-bearing augen gneiss,80.608983,29.18245,2042,14.3,,,0.7,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,DR-9,GHS Igneous,mylonitic granitoid ,80.623083,29.215483,2076,14,,,1.5,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,DR-11,Kalitar Fm.,biotite muscovite schist,80.972483,29.264667,1085,11.6,,,1.7,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,DR-12,Budiganga Gneiss?,mica schist,81.219883,29.2507,616,10.1,,,0.8,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,SK2,GHS,,83.054733,28.19935,,10.3,,,0.3,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,SK3,GHS,,82.796283,28.248803,,10.5,,,0.5,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,KG1,Syangja Fm.,,83.455267,27.951,,8.3,,,2.7,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,BG1,Syangja Fm.,,83.481667,28.228817,,4.9,,,0.7,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,DL9,"""Kushma"" Fm.",,81.736483,28.87445,,14.2,,,1.4,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,BH2,Syangja Fm.,,81.94202,28.44908,,11.1,,,1.2,,,,,ZHe,Cross_2014(PhD_Thesis)
+,,,KN-29,,,85.472,27.907,,2.6,,,0.3,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-71,,,85.412,28.071,,3.3,,,0.6,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-80,,,85.445,28,,1.3,,,0.3,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-100,,,85.353,27.846,,6.1,,,1.4,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-109,,,85.313,27.801,,4.4,,,0.4,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-237,,,85.294,27.965,,2.8,,,1.2,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-244,,,85.368,27.94,,2.2,,,0.3,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-270,,,85.536,27.849,,4,,,1.4,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-272,,,85.266,27.496,,4.9,,,0.6,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN-299,,,84.999,27.781,,5,,,1.3,,,,,AFT,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN029*,,,85.472,27.907,,9.6,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN067,,,85.452,28.05,,7,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN071,,,85.412,28.071,,7.8,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN080,,,85.445,28,,5.1,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN100,,,85.353,27.846,,12.1,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN109*,,,85.313,27.801,,12.1,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN217,,,85.318,28.039,,12.1,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN237,,,85.294,27.965,,11.6,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN244,,,85.368,27.94,,7.5,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN250,,,85.407,27.936,,8.3,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN270,,,85.536,27.849,,11.9,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN272,,,85.266,27.496,,22,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN295*4,,,84.818,27.747,,19.5,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN299*4,,,84.999,27.781,,16.6,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN301,,,85.015,27.758,,15.1,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN427,,,85.228,27.791,,12,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN436,,,85.218,27.767,,13.5,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN440,,,85.549,27.718,,14.2,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN441*4,,,85.534,27.712,,18.9,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN443,,,85.559,27.729,,13.5,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN445,,,85.564,27.76,,17.1,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN450,,,85.568,27.764,,13.7,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN455,,,85.559,27.779,,38.8,,,0.5,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN459,,,85.537,27.782,,17.2,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN461,,,85.379,27.775,,12,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN462,,,85.357,27.779,,12,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN463,,,85.363,27.788,,12.9,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN471,,,85.506,27.795,,13.2,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN517,,,85.625,27.874,,7.3,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN521,,,85.641,27.944,,5.6,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN527,,,85.679,27.972,,7.1,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN665,,,85.535,27.871,,8.8,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN666,,,85.533,27.878,,8.9,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN667,,,85.539,27.896,,10.1,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN668,,,85.547,27.914,,8.3,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN669,,,85.548,27.939,,7.7,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN670,,,85.545,27.945,,7.9,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN671,,,85.54,27.951,,8.6,,,0.5,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN672,,,85.534,27.961,,8.8,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN674*4,,,85.529,27.974,,8.2,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN675,,,85.527,27.987,,8.2,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN677*4,,,85.525,28,,7.1,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN679,,,85.512,28.008,,7.9,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN689,,,85.467,27.959,,9.1,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN690,,,85.482,27.91,,11.6,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN693,,,85.473,27.885,,9.6,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN694,,,85.467,27.88,,10.8,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN695,,,85.454,27.869,,10.3,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN696,,,85.449,27.865,,10.2,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN697,,,85.438,27.865,,9,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN698,,,85.411,27.874,,9.4,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN701,,,85.396,27.87,,9.9,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN702,,,85.39,27.874,,10.3,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN703,,,85.38,27.866,,11,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN704,,,85.369,27.873,,11.7,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN707,,,85.329,27.867,,11.4,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN709,,,85.241,27.874,,17.1,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN710,,,85.239,27.868,,64.7,,,0.5,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN723,,,85.427,28.068,,10.9,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN724,,,85.408,28.081,,10.1,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN731*4,,,85.372,28.087,,7.5,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN732,,,85.359,28.091,,11.2,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN733,,,85.347,28.097,,6.8,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN734,,,85.33,28.101,,8.5,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN735,,,85.324,28.107,,9.8,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN736,,,85.314,28.1,,4.9,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN737,,,85.307,28.093,,5.8,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN738,,,,,,13.4,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN739,,,,,,9.3,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN740,,,85.379,27.793,,12.5,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN742,,,85.417,27.758,,14.1,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN743,,,85.34,27.793,,13.6,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN745,,,85.473,27.698,,14.1,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN746,,,85.488,27.701,,14.6,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN748,,,85.508,27.705,,15.5,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN753,,,85.618,27.631,,15.3,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN864,,,85.071,27.495,,22.5,,,0.5,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN865,,,85.09,27.506,,17.6,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN870,,,84.893,27.554,,20.2,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN876,,,84.907,27.577,,19.9,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN880,,,84.854,27.735,,15.2,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KN881,,,,,,16.4,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP002,,,84.899,27.739,,16.9,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP040,,,84.895,27.69,,19.6,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP074,,,84.848,27.637,,18.9,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP095,,,84.84,27.621,,17.6,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP145,,,84.941,27.611,,17,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP159,,,84.97,27.62,,19.9,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP216,,,85.155,27.579,,18.4,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP316,,,85.121,27.599,,19.1,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,KP347,,,85.51,27.484,,19.8,,,0.4,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE04,,,85.346,28.136,,7.5,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE06,,,85.366,28.135,,6.4,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE08,,,85.401,28.145,,7.4,,,0.3,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE09,,,85.416,28.162,,6.9,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE10,,,85.424,28.169,,6.8,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE11,,,85.592,28.203,,12.3,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE13,,,85.542,28.209,,12.1,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE15,,,85.526,28.211,,8.8,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE20,,,85.491,28.214,,7.3,,,0.1,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE23,,,85.436,28.191,,7.8,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,NE25,,,85.385,28.158,,6.8,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+,,,SR91,,,84.843,27.698,,18.1,,,0.2,,,,,MAr,Hermann_2010(Journal_of_Geophysical_Research)
+Diagram D - Central Taiwan,,,27-00,,,120.831,22.25,471.742,,0.58,,,0.89,,,,AFT,Fuller_2006(Tectonophysics)
+,,,10-01 *8,,,120.632,22.389,145.298,,3.11,7.55,,0.32,1.46,,,AFT,Fuller_2006(Tectonophysics)
+,,,13-01 *8,,,120.7,22.529,379.285,,2.37,3.98,,0.32,1.205,,,AFT,Fuller_2006(Tectonophysics)
+,,,2-00 *8,,,120.98,22.592,106.076,,1.41,2.17,,0.51,0.92,,,AFT,Fuller_2006(Tectonophysics)
+,,,21-00 *8,,,120.934,22.613,987.531,,0.584,2.03,,0.15,0.79,,,AFT,Fuller_2006(Tectonophysics)
+,,,20-00 *8,,,120.931,22.616,987.664,,0.558,0.191,,0.105,0.0485,,,AFT,Fuller_2006(Tectonophysics)
+,,,23-00 *8,,,120.943,22.62,1033.53,,0.608,2.04,,0.11,0.675,,,AFT,Fuller_2006(Tectonophysics)
+,,,19-00 *8,,,120.932,22.623,1075.97,,0.754,1.08,,0.125,0.35,,,AFT,Fuller_2006(Tectonophysics)
+,,,15-01 *8,,,120.648,22.713,139.416,,3.58,3.68,,0.33,0.625,,,AFT,Fuller_2006(Tectonophysics)
+,,,23-01 *8,,,120.659,23.031,314.651,,3.37,4.5,,0.32,0.725,,,AFT,Fuller_2006(Tectonophysics)
+,,,24-01 *8,,,120.67,23.046,358.393,,2.62,2.81,,0.55,1.065,,,AFT,Fuller_2006(Tectonophysics)
+,,,20-01 *8,,,120.544,23.071,306.164,,22.8,39.6,,0.66,3.55,,,AFT,Fuller_2006(Tectonophysics)
+,,,21-01 *8,,,120.621,23.073,554.962,,5.59,30.1,,0.31,6.85,,,AFT,Fuller_2006(Tectonophysics)
+,,,17-01 *8,,,120.52,23.082,126.484,,31.9,61.7,,1.21,5.2,,,AFT,Fuller_2006(Tectonophysics)
+,,,37-01 *8,,,120.942,23.263,2575.88,,1.5,2.58,,0.54,0.915,,,AFT,Fuller_2006(Tectonophysics)
+,,,34-01 *8,,,120.841,23.284,1262.85,,2.01,1.84,,0.32,0.625,,,AFT,Fuller_2006(Tectonophysics)
+,,,28-01 *8,,,120.617,23.432,423.038,,29.3,47.1,,1.01,5.25,,,AFT,Fuller_2006(Tectonophysics)
+,,,25-01 *8,,,120.61,23.438,347.453,,33.6,43.4,,1.16,3.55,,,AFT,Fuller_2006(Tectonophysics)
+,,,30-01 *8,,,120.728,23.465,1430.69,,32.4,35.4,,1.01,3,,,AFT,Fuller_2006(Tectonophysics)
+,,,31-01 *8,,,120.821,23.512,2370.21,,28.2,26.2,,4.34,8.55,,,AFT,Fuller_2006(Tectonophysics)
+,,,19-02 *8,,,120.865,23.546,1067.36,,1.52,0.706,,0.26,0.209,,,AFT,Fuller_2006(Tectonophysics)
+,,,18-02 *8,,,120.938,23.566,1672.3,,73,60.06,,5.56,14,,,AFT,Fuller_2006(Tectonophysics)
+,,,16-02 *8,,,120.939,23.793,416.026,,2.47,2.58,,0.22,0.41,,,AFT,Fuller_2006(Tectonophysics)
+,,,10-02 *8,,,120.817,23.892,521.028,,11.4,23.2,,0.61,4.2,,,AFT,Fuller_2006(Tectonophysics)
+,,,5-02 *8,,,120.874,24.171,546.707,,7.82,13.1,,0.42,3.5,,,AFT,Fuller_2006(Tectonophysics)
+,,,2-02 *8,,,120.91,24.175,610.226,,0.939,0.612,,0.18,0.151,,,AFT,Fuller_2006(Tectonophysics)
+,,,22-02 *8,,,121.303,24.194,2580.64,,1.16,0.814,,0.29,0.277,,,AFT,Fuller_2006(Tectonophysics)
+,,,14-02 *8,,,120.73,24.197,246.909,,28.5,52.4,,0.81,4.5,,,AFT,Fuller_2006(Tectonophysics)
+,,,23-02 *8,,,121.265,24.235,1931.97,,4.64,6.45,,0.46,3.195,,,AFT,Fuller_2006(Tectonophysics)
+,,,23-02,,,121.265,24.235,1931.97,,0.35a,,,1.26,,,,AFT,Fuller_2006(Tectonophysics)
+,,,24-02 *8,,,121.231,24.247,1779.81,,1.62,0.991,,0.34,0.256,,,AFT,Fuller_2006(Tectonophysics)
+,,,25-02 *8,,,121.236,24.247,1946.79,,5.28,7.55,,0.73,2.375,,,AFT,Fuller_2006(Tectonophysics)
+,,,33_01,,,120.427,22.839,2049.15,,0.535,,,0.22,,,,AFT,Lock_2007(PhD Thesis)
+,,,41_05,,,120.667,23.019,421.44,,5.41,,,1.22,,,,AFT,Lock_2007(PhD Thesis)
+,,,24_04,,,120.655,23.022,279.43,,23.1,15.4,,2.4,6.6,,,AFT,Lock_2007(PhD Thesis)
+,,,25_04,,,120.647,23.03,308.457,,13.7,5.14,,1.4,2.46,,,AFT,Lock_2007(PhD Thesis)
+,,,27_04,,,120.647,23.03,308.457,,3.58,,,3.62,,,,AFT,Lock_2007(PhD Thesis)
+,,,26_04,,,120.645,23.031,313.34,,4.1,,,1.01,,,,AFT,Lock_2007(PhD Thesis)
+,,,28_04,,,120.648,23.031,297.475,,3.19,3.33,,0.51,1,,,AFT,Lock_2007(PhD Thesis)
+,,,23-01 *5,,,120.65,23.034,330.38,,3.37,4.5,,0.64,1.45,,,AFT,Lock_2007(PhD Thesis)
+,,,20_01,,,120.544,23.071,304.01,,22.8,39.6,,1.3,7.1,,,AFT,Lock_2007(PhD Thesis)
+,,,35_04,,,120.642,23.073,459.081,,0.55,1.37,,0.185,1.14,,,AFT,Lock_2007(PhD Thesis)
+,,,21-01 *5,,,120.621,23.073,570.28,,5.59,30.1,,0.61,13.7,,,AFT,Lock_2007(PhD Thesis)
+,,,34_04,,,120.611,23.083,355.506,,1.03,2.87,,0.22,1.53,,,AFT,Lock_2007(PhD Thesis)
+,,,36_04,,,120.553,23.085,432.394,,43.5,64.7,,2.5,8.9,,,AFT,Lock_2007(PhD Thesis)
+,,,33_04,,,120.604,23.086,314.085,,8.41,11.1,,0.81,4.1,,,AFT,Lock_2007(PhD Thesis)
+,,,29_04,,,120.51,23.092,175.081,,32.3,43,,2,6.5,,,AFT,Lock_2007(PhD Thesis)
+,,,32_04,,,120.528,23.097,157.39,,29.6,42.9,,1.8,6.8,,,AFT,Lock_2007(PhD Thesis)
+,,,30_04,,,120.513,23.115,360.975,,27.6,48.7,,1.9,9.2,,,AFT,Lock_2007(PhD Thesis)
+,,,31_04,,,120.503,23.115,153.594,,33,52.4,,0.8,8.3,,,AFT,Lock_2007(PhD Thesis)
+,,,39_04,,,120.47,23.238,316.828,,41.9,66.7,,2.1,10.7,,,AFT,Lock_2007(PhD Thesis)
+,,,6_04,,,120.84,24.029,244.12,,58.8,,,3.6,,,,AFT,Lock_2007(PhD Thesis)
+,,,5_04,,,120.822,24.033,326.556,,47.9,,,2.7,,,,AFT,Lock_2007(PhD Thesis)
+,,,4_04,,,120.832,24.035,371,,40.9,,,2.5,,,,AFT,Lock_2007(PhD Thesis)
+,,,3_04,,,120.803,24.037,294.3,,46.2,,,2.3,,,,AFT,Lock_2007(PhD Thesis)
+,,,11_04,,,120.869,24.046,290,,2.43,,,0.59,,,,AFT,Lock_2007(PhD Thesis)
+,,,13-04,,,120.897,24.06,329.25,,3.23,,,0.87,,,,AFT,Lock_2007(PhD Thesis)
+,,,14_04,,,120.946,24.067,412,,1.37,2.7,,0.56,1.86,,,AFT,Lock_2007(PhD Thesis)
+,,,18_04,,,120.988,24.076,491.856,,2.3,2.87,,0.42,0.99,,,AFT,Lock_2007(PhD Thesis)
+,,,9_04,,,120.87,24.077,313.199,,2.82,2.98,,0.91,1.46,,,AFT,Lock_2007(PhD Thesis)
+,,,7_04,,,120.861,24.079,331.763,,61,69.5,,4.1,10.5,,,AFT,Lock_2007(PhD Thesis)
+,,,8_04,,,120.858,24.08,337.971,,37.8,62.4,,3.2,9.7,,,AFT,Lock_2007(PhD Thesis)
+,,,2_04,,,120.857,24.11,730.6,,41.1,,,3.1,,,,AFT,Lock_2007(PhD Thesis)
+,,,1_04,,,120.849,24.112,915.859,,61.1,,,5.4,,,,AFT,Lock_2007(PhD Thesis)
+,,,23_04,,,121.123,24.254,1285.68,,0.702,1.52,,0.28,1.49,,,AFT,Lock_2007(PhD Thesis)
+,,,13-05,,,121.58,24.848,263.53,,1.64,,,0.55,,,,AFT,Lock_2007(PhD Thesis)
+,,,14-05,,,121.549,24.862,164.39,,1.17,,,0.52,,,,AFT,Lock_2007(PhD Thesis)
+,,,12_05,,,121.539,24.894,72.63,,2.28,,,0.69,,,,AFT,Lock_2007(PhD Thesis)
+,,,10_05,,,121.51,24.906,507.2,,3.65,,,0.98,,,,AFT,Lock_2007(PhD Thesis)
+,,,9_05,,,121.505,24.911,447.16,,3.85,,,3.85,,,,AFT,Lock_2007(PhD Thesis)
+,,,11_05,,,121.527,24.914,49.16,,1.87,,,1.88,,,,AFT,Lock_2007(PhD Thesis)
+,,,8_05,,,121.499,24.92,257.22,,6.27,,,0.89,,,,AFT,Lock_2007(PhD Thesis)
+,,,5_05,,,121.47,24.925,75.1,,14.3,,,14.4,,,,AFT,Lock_2007(PhD Thesis)
+,,,4_05,,,121.47,24.928,315.39,,9.86,,,3.32,,,,AFT,Lock_2007(PhD Thesis)
+,,,7_05,,,121.474,24.988,16.78,,2.49,,,0.49,,,,AFT,Lock_2007(PhD Thesis)
+,,,1_05,,,121.371,24.991,188.66,,156,,,18,,,,AFT,Lock_2007(PhD Thesis)
+,,,2_05,,,121.361,24.997,176.18,,20.5,,,1.8,,,,AFT,Lock_2007(PhD Thesis)
+,,,3_05,,,121.359,25,201.41,,51.8,,,2.9,,,,AFT,Lock_2007(PhD Thesis)
+,,,MT-403,,meta-sandstone,120.9,23.79,,19.7,,,,,,4,-3.3,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,MT-402,,meta-sandstone,121,23.79,,3.3,,,,,,0.6,-0.5,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,MT-401,,meta-sandstone,121.03,23.78,,2.4,,,,,,0.5,-0.4,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,NH-207,,sandstone,121.36,24.78,,53.8,,,,,,11.3,-9.2,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,NH-206,,sandstone,121.37,24.7,,29.1,,,,,,6.8,-5.5,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,NH-205,,sandstone,121.37,24.69,,14.2,,,,,,2.9,-2.5,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,NH-204,,meta-sandstone,121.45,24.64,,6.4,,,,,,1.1,-1,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,NH-203,,meta-sandstone,121.46,24.65,,4.6,,,,,,1.1,-0.9,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,NH-202,,meta-sandstone,121.51,24.61,,3.5,,,,,,1,-0.8,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,NH-201,,meta-sandstone,121.52,24.62,,3.7,,,,,,0.9,-0.7,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-301,,gneiss,121.58,24.17,,1.1,,,,,,0.2,-0.2,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-302,,siliceous schist,121.48,24.21,,0.9,,,,,,0.2,-0.2,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-303,,siliceous schist,121.38,24.17,,1.8,,,,,,0.2,-0.2,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-304,,meta-sandstone,121.36,24.18,,2.5,,,,,,0.4,-0.3,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-305,,meta-sandstone,121.29,24.23,,13.2,,,,,,2.6,-2.2,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-306,,slate,121.25,24.26,,20.8,,,,,,4.4,-3.6,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-307,,meta-sandstone,121.18,24.26,,2.7,,,,,,0.4,-0.4,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-308,,meta-sandstone,121.14,24.25,,2.9,,,,,,0.6,-0.5,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-309,,meta-sandstone,121.06,24.23,,2.6,,,,,,0.4,-0.3,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,CH-310,,meta-sandstone,121.02,24.18,,16.2,,,,,,2.8,-2.4,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SH-507,,sandstone,120.8,23.21,,31.9,,,,,,13.5,-9.2,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SH-506,,meta-sandstone,120.83,23.28,,30,,,,,,6.3,-5.2,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SH-505,,meta-sandstone,120.85,23.29,,6.2,,,,,,3.6,-2.4,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SH-504,,quartzite,120.95,23.27,,1.7,,,,,,0.3,-0.3,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SH-503,,quartzite,121,23.23,,1.2,,,,,,0.3,-0.2,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SH-502,,quartzite,121.07,23.14,,3,,,,,,0.9,-0.7,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SH-501,,siliceous schist,121.12,23.14,,1.2,,,,,,0.3,-0.3,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SR-601,,meta-sandstone,120.97,22.56,,6,,,,,,1.3,-2.1,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SR-602,,meta-sandstone,120.89,22.34,,44.4,,,,,,6.1,-5.4,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SR-603,,meta-sandstone,120.86,22.29,,62.5,,,,,,18,-13.6,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SR-604,,meta-sandstone,120.78,22.22,,52.7,,,,,,9.9,-8.3,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,SR-606,,meta-sandstone,120.74,22.2,,100.1,,,,,,13.2,-11.8,ZFT,Fuller_2006(Tectonophysics) → Liu_2001(Earth_&_Planetary_Science_Letters) *6 *7
+,,,24_04,,,120.655,23.022,279.43,2.7,,,0.08,,,,,AHe,Lock_2007(PhD Thesis)
+,,,24_04,,,120.655,23.022,279.43,4.2,,,0.125,,,,,AHe,Lock_2007(PhD Thesis)
+,,,28_04,,,120.648,23.031,297.475,2.876,,,0.199,,,,,AHe,Lock_2007(PhD Thesis)
+,,,28_04,,,120.648,23.031,297.475,1.228,,,0.2375,,,,,AHe,Lock_2007(PhD Thesis)
+,,,28_04,,,120.648,23.031,297.475,0.969,,,0.1925,,,,,AHe,Lock_2007(PhD Thesis)
+,,,23_01,,,120.65,23.034,330.38,0.705,,,0.4685,,,,,AHe,Lock_2007(PhD Thesis)
+,,,23_01,,,120.65,23.034,330.38,1.552,,,0.137,,,,,AHe,Lock_2007(PhD Thesis)
+,,,23_01,,,120.65,23.034,330.38,0.968,,,10.2285,,,,,AHe,Lock_2007(PhD Thesis)
+,,,20_01,,,120.544,23.071,304.01,0.416,,,0.022,,,,,AHe,Lock_2007(PhD Thesis)
+,,,20_01,,,120.544,23.071,304.01,0.273,,,0.0145,,,,,AHe,Lock_2007(PhD Thesis)
+,,,20_01,,,120.544,23.071,304.01,0.027,,,0.025,,,,,AHe,Lock_2007(PhD Thesis)
+,,,20_01,,,120.544,23.071,304.01,1.405,,,0.042,,,,,AHe,Lock_2007(PhD Thesis)
+,,,33_04,,,120.604,23.086,314.085,1.1,,,0.034,,,,,AHe,Lock_2007(PhD Thesis)
+,,,29_04,,,120.51,23.092,175.081,1.6,,,0.049,,,,,AHe,Lock_2007(PhD Thesis)
+,,,29_04,,,120.51,23.092,175.081,1.5,,,0.045,,,,,AHe,Lock_2007(PhD Thesis)
+,,,29_04,,,120.51,23.092,175.081,0.8,,,0.0245,,,,,AHe,Lock_2007(PhD Thesis)
+,,,32_04,,,120.528,23.097,157.39,1.3,,,0.0395,,,,,AHe,Lock_2007(PhD Thesis)
+,,,31_04,,,120.503,23.115,153.594,0.573,,,0.037,,,,,AHe,Lock_2007(PhD Thesis)
+,,,31_04,,,120.503,23.115,153.594,2.285,,,0.035,,,,,AHe,Lock_2007(PhD Thesis)
+,,,30_04,,,120.513,23.115,360.975,2.7,,,0.0815,,,,,AHe,Lock_2007(PhD Thesis)
+,,,30_04,,,120.513,23.115,360.975,2,,,0.0595,,,,,AHe,Lock_2007(PhD Thesis)
+,,,31_04,,,120.503,23.115,153.594,7.1,,,0.2125,,,,,AHe,Lock_2007(PhD Thesis)
+,,,3_04,,,120.803,24.037,294.3,2.1,,,0.0625,,,,,AHe,Lock_2007(PhD Thesis)
+,,,3_04,,,120.803,24.037,294.3,2.6,,,0.0795,,,,,AHe,Lock_2007(PhD Thesis)
+,,,3_04,,,120.803,24.037,294.3,4.4,,,0.131,,,,,AHe,Lock_2007(PhD Thesis)
+,,,14_04,,,120.946,24.067,412,2.6,,,0.0775,,,,,AHe,Lock_2007(PhD Thesis)
+,,,14_04,,,120.946,24.067,412,4.1,,,0.124,,,,,AHe,Lock_2007(PhD Thesis)
+,,,14_04,,,120.946,24.067,412,3.4,,,0.1025,,,,,AHe,Lock_2007(PhD Thesis)
+,,,9_04,,,120.87,24.077,313.199,2.6,,,0.0765,,,,,AHe,Lock_2007(PhD Thesis)
+,,,9_04,,,120.87,24.077,313.199,2.5,,,0.074,,,,,AHe,Lock_2007(PhD Thesis)
+,,,7_04,,,120.861,24.079,331.763,4.3,,,0.128,,,,,AHe,Lock_2007(PhD Thesis)
+,,,7_04,,,120.861,24.079,331.763,3.5,,,0.1055,,,,,AHe,Lock_2007(PhD Thesis)
+,,,7_04,,,120.861,24.079,331.763,3.6,,,0.108,,,,,AHe,Lock_2007(PhD Thesis)
+,,,8_04,,,120.858,24.08,337.971,3.7,,,0.11,,,,,AHe,Lock_2007(PhD Thesis)
+,,,8_04,,,120.858,24.08,337.971,3.5,,,0.1035,,,,,AHe,Lock_2007(PhD Thesis)
+,,,8_04,,,120.858,24.08,337.971,3.1,,,0.092,,,,,AHe,Lock_2007(PhD Thesis)
+Diagram E - Northern Bolivia,,,Z-3,,granite,-68.0736,-16.1047,2040,6.7,,,1.2,,,,,AFT,Benjamin_1987(Geology) *9
+,,,Z-4,,granite,-68.093,-16.1238,2380,11.4,,,1,,,,,AFT,Benjamin_1987(Geology) *9
+,,,Z-5,,granite,-68.1105,-16.1316,2680,8,,,0.8,,,,,AFT,Benjamin_1987(Geology) *9
+,,,Z-6,,granite,-68.1175,-16.1511,3000,14.1,,,1.9,,,,,AFT,Benjamin_1987(Geology) *9
+,,,Z-7,,granite,-68.1292,-16.1642,3300,4.9,,,0.9,,,,,AFT,Benjamin_1987(Geology) *9
+,,,Z-9,,granite,-68.1386,-16.17,3450,9,,,1,,,,,AFT,Benjamin_1987(Geology) *9
+,,,Z-10,,granite,-68.1206,-16.2383,4280,10.3,,,1.6,,,,,AFT,Benjamin_1987(Geology) *9
+,,,Z-11,,granite,-68.1178,-16.2742,4560,15.5,,,1,,,,,AFT,Benjamin_1987(Geology) *9
+,,,Z-12,,granite,-68.128,-16.2856,4780,11.7,,,1.7,,,,,AFT,Benjamin_1987(Geology) *9
+,,AL1,B811-1,,,-68.818,-16.682,3900,9.87,,,0.84,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,AL2,B811-4,,,-68.807,-16.668,4450,37.2,,,3.3,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,EC1,B721-5,,,-67.766,-16.902,2320,2.63,,,0.53,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,EC2,B721-2,,,-67.7521,-16.896,2240,4.89,,,1.38,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,EC3,725-13,,,-67.9742,-16.3331,3770,85.8,,,13.5,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,EC4,JB01-K3,,,-67.7009,-16.0874,1020,101,,,27,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,IA1,JB01-L3,,,-67.5213,-15.8398,840,30.8,,,12.8,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,IA2,JB01-M1,,,-67.5252,-15.8035,1200,42.2,,,8.8,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,IA3,JB01-M4,,,-67.5032,-15.7825,600,14,,,1.4,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,IA4,JB01-M7,,,-67.4894,-15.7659,760,10.5,,,1.4,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,IA5,JB01-M8,,,-67.4971,-15.7229,1160,10.9,,,1.1,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,IA6,JB01-N1,,,-67.4972,-15.6967,1480,11.5,,,1,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,IA7,722-20,,,-67.4887,-15.704,1301,18.7,,,4.8,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,IA8,JB01-N2,,,-67.4872,-15.6755,1400,12.3,,,1.1,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,SA1,JB01-N3,,,-67.4408,-15.596,522,116,,,7,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,SA2,721-14,,,-67.257,-15.5262,801,75.5,,,18.8,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,SA3,JB01-04,,,-67.1365,-15.3952,820,6.62,,,0.46,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,SA4,JB01-06,,,-67.1077,-15.3704,640,51.5,,,2.8,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,SA5,JB01-09,,,-67.0723,-15.235,790,91.4,,,4.7,,,,,AFT,Barnes_2006(Earth and Planetary Science Letters) *9
+,,EC1,05JBBL070,,,-66.95,-18,3874,17.7,,,10.6,,,,,AFT,Barnes_2012(Geology) *9
+,,EC2,05JBBL071,,,-67.02,-17.88,3684,40.3,,,2.5,,,,,AFT,Barnes_2012(Geology) *9
+,,EC3,05JBBL067,,,-66.66,-17.71,3998,43,,,2.4,,,,,AFT,Barnes_2012(Geology) *9
+,,EC6,05JBBL065,,,-66.45,-17.66,3559,57.1,,,3.9,,,,,AFT,Barnes_2012(Geology) *9
+,,EC7,05JBBL064,,,-66.43,-17.66,3209,20.7,,,2.1,,,,,AFT,Barnes_2012(Geology) *9
+,,EC7*10,05JBBL064z,,,-66.43,-17.66,3209,604,,,28,,,,,AFT,Barnes_2012(Geology) *9
+,,EC8,05JBBL062,,,-66.36,-17.6,2761,7.3,,,2.4,,,,,AFT,Barnes_2012(Geology) *9
+,,IA1,05JBBL060,,,-65.89,-17.23,3154,0.5,,,0.5,,,,,AFT,Barnes_2012(Geology) *9
+,,IA2,05JBBL059,,,-65.9,-17.17,2772,126,,,50,,,,,AFT,Barnes_2012(Geology) *9
+,,IA3,05JBBL058,,,-65.82,-17.19,1787,8.1,,,1.8,,,,,AFT,Barnes_2012(Geology) *9
+,,SA1,05JBBL056,,,-65.74,-17.16,1762,5.6,,,1,,,,,AFT,Barnes_2012(Geology) *9
+,,SA2,05JBBL055,,,-65.68,-17.1,882,4.1,,,0.7,,,,,AFT,Barnes_2012(Geology) *9
+,,SA3,05JBBL054,,,-65.65,-17.06,611,1.8,,,1.3,,,,,AFT,Barnes_2012(Geology) *9
+,,SA4,05JBBL052,,,-65.55,-17.02,410,3,,,0.7,,,,,AFT,Barnes_2012(Geology) *9
+,,AL1,B815-5,,,-68.67,-18.49,3950,83.5,,,10.4,,,,,AFT,Barnes_2012(Geology) *9
+,,AL2,B815-1,,,-68.67,-18.48,4144,43.2,,,6.8,,,,,AFT,Barnes_2012(Geology) *9
+,,EC4,B611-5,,,-66.61,-17.72,3850,68.9,,,4.9,,,,,AFT,Barnes_2012(Geology) *9
+,,EC5,66-7,,,-66.51,-17.69,3600,28,,,2.8,,,,,AFT,Barnes_2012(Geology) *9
+,,C1A,,,,-68.242,-16.076,4630,19.3,,,3.2,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C1B,,,,-68.243,-16.077,4640,20,,,1.7,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C1C,,,,-68.242,-16.076,4630,19.1,,,2.6,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C2,,,,-68.17,-15.997,2875,9.1,,,1.4,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C3,,,,-68.173,-16.003,2735,6.4,,,1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C4,,,,-68.173,-15.991,3070,10.7,,,1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C5,,,,-68.177,-15.989,3380,10.9,,,1.4,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C7,,,,-68.235,-15.987,4115,19.2,,,1.6,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C8,,,,-68.253,-16.005,4388,23,,,4.3,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C9,,,,-68.263,-16.025,4580,17.9,,,1.4,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C10A,,,,-68.287,-16.052,4800,12.5,,,1.1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C10B,,,,-68.287,-16.052,4800,17.6,,,1.5,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,C11,,,,-68.296,-16.058,5020,14.7,,,2.1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,T1,,,,-67.887,-16.485,4640,5.7,,,0.7,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,T2,,,,-67.876,-16.487,4490,6.1,,,0.8,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,T3,,,,-67.869,-16.48,4290,9.8,,,2.7,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,T4,,,,-67.862,-16.476,4080,6.5,,,1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,T5,,,,-67.845,-16.469,3800,8,,,1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,T6,,,,-67.832,-16.455,3500,5.5,,,0.8,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,T7,,,,-67.4907,-16.441,3240,10.5,,,1.1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z10 *11,,,,-68.122,-16.242,4280,10.3,,,1.6,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z11 *11,,,,-68.12,-16.277,4560,15.5,,,1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z12 *11,,,,-68.128,-16.286,4780,11.7,,,1.7,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z3 *11,,,,-68.076,-16.109,2040,6.7,,,1.2,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z4 *11,,,,-68.093,-16.127,2380,11.4,,,1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z5 *11,,,,-68.111,-16.135,2680,8,,,0.8,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z6 *11,,,,-68.119,-16.153,3000,14.1,,,1.9,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z7 *11,,,,-68.129,-16.166,3300,4.9,,,0.9,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,Z9 *11,,,,-68.14,-16.175,3450,9,,,1,,,,,AFT,Safran_2006(Journal of Geology) *9
+,,IA2-1,JB01-M2,,,-67.5048,-15.8073,700,31.7,,,7.9,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,IA1-2,723-13,,,-67.5079,-15.8239,875,60,,,19.6,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,IA3-1,JB01-M5,,,-67.505,-15.7779,1023,13.2,,,1.1,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,IA1-1,JB01-L4,,,-67.5298,-15.8305,1160,30.3,,,5.5,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,IA3-2,JB01-M6,,,-67.4232,-15.8266,1680,79.9,,,7.9,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,EC2-1,05JBBL050,,,-67.72,-16.8766,2148,49.8,,,2.1,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,EC2-1 Zircon,05JBBL051,,,-67.72,-16.8766,2148,551,,,25,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,EC3-2,724-18,,,-67.7849,-16.2539,2286,42.1,,,6.4,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,EC0-1,05JBBL049,,,-67.7959,-16.9637,2529,4.4,,,0.5,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,EC3-1,725-10,,,-67.9125,-16.3122,3246,12.6,,,2.3,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,,EC2-2,725-16,,,-68.0408,-16.3381,4572,8.3,,,1.65,,,,,AFT,McQuarrie_2008(Tectonics) *9
+,Northern (Amaguaya) Transect,,RJG7,,Yani Granite ,-68.22982,-15.91397,3042,8.6,,,0.7,,,,,AFT,Gillis_2006(Tectonics)
+,,,RJG8,,Yani Granite ,-68.24128,-15.92668,3343,10.5,,,0.9,,,,,AFT,Gillis_2006(Tectonics)
+,,,RJG9,,Yani Granite ,-68.24524,-15.93896,3414,10,,,0.9,,,,,AFT,Gillis_2006(Tectonics)
+,,,RJG1,,Yani Granite ,-68.25494,-15.95422,3805,16.2,,,1.3,,,,,AFT,Gillis_2006(Tectonics)
+,,,03RJG15,,Yani Granite ,-68.27124,-15.96353,3976,15.4,,,1.5,,,,,AFT,Gillis_2006(Tectonics)
+,,,RJG2,,Yani Granite ,-68.27564,-15.97359,4074,10.3,,,0.9,,,,,AFT,Gillis_2006(Tectonics)
+,,,RJG3,,Yani Granite ,-68.29033,-15.98879,4335,17.9,,,1.8,,,,,AFT,Gillis_2006(Tectonics)
+,,,03RJG16,,Illampu Granite,-68.29955,-16.02932,4612,14.3,,,1.2,,,,,AFT,Gillis_2006(Tectonics)
+,,,RJG4,,Illampu Granite,-68.29516,-16.03861,4714,10.4,,,1.7,,,,,AFT,Gillis_2006(Tectonics)
+,,,RJG5,,Illampu Granite,-68.3057,-16.05169,5020,11.2,,,3.7,,,,,AFT,Gillis_2006(Tectonics)
+,,,RJG6,,Illampu Granite,-68.30482,-16.07279,5363,18.2,,,1.1,,,,,AFT,Gillis_2006(Tectonics)
+,Central Rio (Zongo) Transect,,RZG19,,Huayana Potosí granite,-68.14203,-16.26947,5400,16.3,,,1,,,,,AFT,Gillis_2006(Tectonics)
+,Southern (Quimsa Cruz) Transect,,QCG7,,Quimsa Cruz granite (Mina Argentina) ,-67.40954,-16.85137,3900,6.8,,,0.6,,,,,AFT,Gillis_2006(Tectonics)
+,,,QCG6,,Quimsa Cruz granite (Mina Argentina) ,-67.42966,-16.8544,4438,5.8,,,0.5,,,,,AFT,Gillis_2006(Tectonics)
+,,,QCG5,,Quimsa Cruz granite (Mina Viloco) ,-67.46099,-16.8632,4830,15.5,,,1.3,,,,,AFT,Gillis_2006(Tectonics)
+,,,QCG4,,Quimsa Cruz granite (Mina Viloco) ,-67.48111,-16.86155,5108,16.2,,,2.4,,,,,AFT,Gillis_2006(Tectonics)
+,,,Z-3,,granite,-68.0736,-16.1047,2040,36,,,1.3,,,,,ZFT,Benjamin_1987(Geology) *9
+,,,Z-4,,granite,-68.093,-16.1238,2380,31.9,,,1.45,,,,,ZFT,Benjamin_1987(Geology) *9
+,,,Z-5,,granite,-68.1105,-16.1316,2680,38.2,,,6.45,,,,,ZFT,Benjamin_1987(Geology) *9
+,,,Z-9,,granite,-68.1386,-16.17,3450,46,,,2,,,,,ZFT,Benjamin_1987(Geology) *9
+,,,Z-10,,granite,-68.1206,-16.2383,4280,62.8,,,2.35,,,,,ZFT,Benjamin_1987(Geology) *9
+,,,Z-11,,granite,-68.1178,-16.2742,4560,101,,,4.7,,,,,ZFT,Benjamin_1987(Geology) *9
+,,,Z-12,,granite,-68.128,-16.2856,4780,78.6,,,3.3,,,,,ZFT,Benjamin_1987(Geology) *9
+,,,RJG7,,Yani Granite ,-68.22982,-15.91397,3042,42.9,,,1.1,,,,,MAr,Gillis_2006(Tectonics)
+,,,RJG8,,Yani Granite ,-68.24128,-15.92668,3343,52.4,,,1.3,,,,,MAr,Gillis_2006(Tectonics)
+,,,RJG1,,Yani Granite ,-68.25494,-15.95422,3805,55,,,2,,,,,MAr,Gillis_2006(Tectonics)
+,,,EC3a,,,−67.974,−16.333,3770,15.72,,,0.295,,,,,ZHe,Barnes_2006(Earth and Planetary Science Letters) *9
+,,,EC3b,,,−67.974,−16.333,3770,20.62,,,0.495,,,,,ZHe,Barnes_2006(Earth and Planetary Science Letters) *9
+,,,EC3c,,,−67.974,−16.333,3770,33.35,,,4.05,,,,,ZHe,Barnes_2006(Earth and Planetary Science Letters) *9
+Diagram F - Northern Argentinia,,09AA14,09AA14_Z_1,Cretaceous porphyry dike (Ksg),,-68.6786,-21.8397,4274,56.72,,,0.97,,,,,ZHe,Reiners_2015(Geodynamics)
+,,09AA14,09AA14_Z_2,Cretaceous porphyry dike (Ksg),,-68.6786,-21.8397,4274,58.56,,,0.98,,,,,ZHe,Reiners_2015(Geodynamics)
+,,09AA14,09AA14_Z_3,Cretaceous porphyry dike (Ksg),,-68.6786,-21.8397,4274,59.02,,,1.03,,,,,ZHe,Reiners_2015(Geodynamics)
+,,09AA18,09AA18_Z_1,Cretaceous porphyry dike (Ksg),,-68.6944,-21.8338,3655,59.69,,,1.09,,,,,ZHe,Reiners_2015(Geodynamics)
+,,09AA18,09AA18_Z_2,Cretaceous porphyry dike (Ksg),,-68.6944,-21.8338,3655,60.49,,,1.06,,,,,ZHe,Reiners_2015(Geodynamics)
+,,09AA18,09AA18_Z_3,Cretaceous porphyry dike (Ksg),,-68.6944,-21.8338,3655,55.29,,,0.96,,,,,ZHe,Reiners_2015(Geodynamics)
+,,09KMAD13,09KMAD13Z1,Loma Amarilla,,-68.6336,-23.6969,2650,49.35,,,1.22,,,,,ZHe,Reiners_2015(Geodynamics)
+,,09KMAD11,09KMAD11Z4,Loma Amarilla,,-68.6424,-23.6976,2738,62.33,,,1.34,,,,,ZHe,Reiners_2015(Geodynamics)
+,,CL14,CL14Z1,Jig Early Jurassic granite,,-69.5168,-23.4038,1519,42.01,,,0.7,,,,,ZHe,Reiners_2015(Geodynamics)
+,,CL14,CL14Z2,Jig Early Jurassic granite,,-69.5168,-23.4038,1519,52.19,,,0.89,,,,,ZHe,Reiners_2015(Geodynamics)
+,,CL15,CL15Z1,Kg Cretaceous granodiorite,,-69.3585,-22.8731,1743,57.15,,,1.49,,,,,ZHe,Reiners_2015(Geodynamics)
+,,CL15,CL15Z2,Kg Cretaceous granodiorite,,-69.3585,-22.8731,1743,51.65,,,1.38,,,,,ZHe,Reiners_2015(Geodynamics)
+,,CL1,,JKv granodiorite,,-70.367134,-24.23458,1638,50.8,,,3.4,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL6,,"J-K sandstone, Santa Ana Fm.",,-69.1128,-24.245817,3160,23.7,,,3.5,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL7,,Pzg late Paleozoic granite,,-70.50699,-23.099619,520,43.5,,,3.3,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL8,,Jsg Jurassic granitoid,,-70.33236,-23.09185,110,80.2,,,7.1,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL9,,Kg Jurassic granodiorite,,-70.260254,-22.627453,76,58.2,,,5.1,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL10,,Kg Jurassic granodiorite,,-70.25423,-22.458052,76,98.5,,,12.3,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL11,,Kg Jurassic granodiorite,,-70.17482,-22.082664,224,87.8,,,6.4,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL12,,Jg Jurassic granite,,-70.205414,-23.461185,725,62.1,,,14,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL13,,Kssb(a) El Buitre K-Pg granodiorite,,-69.963715,-23.319435,1211,15.3,,,2.7,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL14,,Jig Early Jurassic granite,,-69.51684,-23.403782,1519,33.1,,,3.5,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL15,,Kg Cretaceous granodiorite,,-69.35845,-22.873102,1743,29.1,,,3.8,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL17,,Pzs El Toco Fm. Sandstone,,-69.784584,-22.044035,1514,46.2,,,8.2,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL18,,Pzgm granite,,-68.838295,-22.365126,2439,25.1,,,3,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL20,,Pzg granite,,-68.922585,-23.040968,2935,43.7,,,3.4,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL21,,Kgd Cretaceous granodiorite,,-68.7582,-23.668657,2726,30.3,,,7.8,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL22,,Kgd Late K-Early Pg granodiorite,,-68.33968,-23.667439,2410,23.2,,,2.3,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL23,,Granite clast in conglomerate of Orange (?) Fm. ,,-68.320274,-22.846033,2696,29.4,,,4,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL27,,Cretaceous Purilactis sandstone,,-68.47902,-23.099585,2336,27.4,,,3.4,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL28,,Loma Amarilla,,-68.63281,-23.66815,2611,32.9,,,2.2,,,,,AFT,Reiners_2015(Geodynamics)
+,,CL29,,Ktig Paleocene granite,,-69.03474,-23.537252,2451,49.6,,,7.1,,,,,AFT,Reiners_2015(Geodynamics)
+,,03AA13,03AA13-A-1,,,-65.8911,-24.4863,2825,47.57,,,1.33,,,,,AHe,Reiners_2015(Geodynamics)
+,,03AA13,03AA13-A-3,,,-65.8911,-24.4863,2825,45.62,,,1.27,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA32,08AA32-A-1,,,-67.3284,-24.6229,4631,35.58,,,1.09,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA32,08AA32-A-2,,,-67.3284,-24.6229,4631,36.72,,,0.97,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA32,08AA32-A-3,,,-67.3284,-24.6229,4631,37.94,,,1.02,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA33,08AA33-A-2,,,-67.3303,-24.6337,4483,44.27,,,1.33,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA33,08AA33-A-3,,,-67.3303,-24.6337,4483,39.36,,,1.23,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA36,08AA36-A-1,,,-67.3281,-24.635,4367,49.89,,,2.63,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA36,08AA36-A-2,,,-67.3281,-24.635,4367,46.2,,,2.95,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07,08AA07_A_1,,Devonian sandstone,-65.0197,-23.2802,4556,5.65,,,0.27,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07,08AA07_A_2,,Devonian sandstone,-65.0197,-23.2802,4556,31.95,,,0.9,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07,08AA07_A_3,,Devonian sandstone,-65.0197,-23.2802,4556,38.16,,,0.8,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07,08AA07_A_4,,Devonian sandstone,-65.0197,-23.2802,4556,5.84,,,0.33,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07,08AA07_A_5,,Devonian sandstone,-65.0197,-23.2802,4556,6.13,,,0.32,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07a,08AA07a_1,,Devonian sandstone,-65.0197,-23.2802,4556,5.65,,,0.27,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07a,08AA07a_2,,Devonian sandstone,-65.0197,-23.2802,4556,31.95,,,0.9,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07a,08AA07a_3,,Devonian sandstone,-65.0197,-23.2802,4556,38.16,,,0.8,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA07a,08AA07a_4,,Devonian sandstone,-65.0197,-23.2802,4556,5.84,,,0.33,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA11,08AA11_A_1,,Puncoviscana,-65.6948,-24.8908,1758,5.71,,,1.4,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA31,08AA31_A_1,,marine ordivician sandstone,-67.2921,-23.6171,4547,11.59,,,0.83,,,,,AHe,Reiners_2015(Geodynamics)
+,,08AA31,08AA31_A_2,,marine ordivician sandstone,-67.2921,-23.6171,4547,16.71,,,0.41,,,,,AHe,Reiners_2015(Geodynamics)
+,,CL09,CL09-A-1,,Kg Jurassic granodiorite,-70.2603,-22.6275,76,35.98,,,1.2,,,,,AHe,Reiners_2015(Geodynamics)
+,,CL09,CL09-A-2,,Kg Jurassic granodiorite,-67.2921,-23.6171,4547,34.27,,,0.94,,,,,AHe,Reiners_2015(Geodynamics)
+,,CL15,CL15-A-1,,Kg Cretaceous granodiorite ,-69.3585,-22.8731,1743,47.18,,,1.12,,,,,AHe,Reiners_2015(Geodynamics)
+,,CL15,CL15-A-2,,Kg Cretaceous granodiorite ,-69.3585,-22.8731,1743,40.51,,,1.32,,,,,AHe,Reiners_2015(Geodynamics)
+,,CL22,CL22-A-1,,Kgd Late K-Early Pg granodiorite ,-68.3397,-23.6674,2376,28.28,,,0.66,,,,,AHe,Reiners_2015(Geodynamics)
+,,CL22,CL22-A-2,,Kgd Late K-Early Pg granodiorite ,-68.3397,-23.6674,2376,25.19,,,0.66,,,,,AHe,Reiners_2015(Geodynamics)
+,,CL29,CL29-A-1,,Ktig Paleocene granite,-69.0347,-23.5373,2472,47.01,,,5.29,,,,,AHe,Reiners_2015(Geodynamics)
+,,CL29,CL29-A-2,,Ktig Paleocene granite,-69.0347,-23.5373,2472,50.7,,,2.23,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD12,09PRAD12aA,,Kssb(a) El Buitre K-Pg granodiorite,-69.4657,-23.3574,2232,50.19,,,2.92,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD12,09PRAD12aB,,Kssb(a) El Buitre K-Pg granodiorite,-69.4657,-23.3574,2232,54.47,,,2.59,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD13,09PRAD13a1,,Kssb(a) El Buitre K-Pg granodiorite,-69.4629,-23.3588,2165,47.23,,,1.37,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD14,09PRAD14aB,,Kssb(a) El Buitre K-Pg granodiorite,-69.4597,-23.3583,2097,46.79,,,1.12,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD14,09PRAD14aC,,Kssb(a) El Buitre K-Pg granodiorite,-69.4597,-23.3583,2097,40.33,,,1.01,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD15,09PRAD15aA,,Kssb(a) El Buitre K-Pg granodiorite,-69.4569,-23.3574,2041,45.22,,,1.41,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD15,09PRAD15aB,,Kssb(a) El Buitre K-Pg granodiorite,-69.4569,-23.3574,2041,48.79,,,1.27,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD15,09PRAD15aC,,Kssb(a) El Buitre K-Pg granodiorite,-69.4569,-23.3574,2041,42.93,,,1.47,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD16,09PRAD16a1,,Kssb(a) El Buitre K-Pg granodiorite,-69.4657,-23.3425,1937,43.72,,,1.79,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD16,09PRAD16a2,,Kssb(a) El Buitre K-Pg granodiorite,-69.4657,-23.3425,1937,49.64,,,1.21,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD16,09PRAD16a3,,Kssb(a) El Buitre K-Pg granodiorite,-69.4657,-23.3425,1937,46.17,,,3.02,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD17,09PRAD17a-1,,Kssb(a) El Buitre K-Pg granodiorite,-69.4557,-23.3538,2056,52.96,,,1.73,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD17,09PRAD17a-2,,Kssb(a) El Buitre K-Pg granodiorite,-69.4557,-23.3538,2056,51.82,,,1.75,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD18,09PRAD18aA,,Kssb(a) El Buitre K-Pg granodiorite,-69.461,-23.3863,1855,43.02,,,1.26,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD18,09PRAD18aB,,Kssb(a) El Buitre K-Pg granodiorite,-69.461,-23.3863,1855,38.67,,,1.17,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD19,09PRAD19aA,,Kssb(a) El Buitre K-Pg granodiorite,-69.4634,-23.3873,1768,43.96,,,1.79,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD19,09PRAD19aB,,Kssb(a) El Buitre K-Pg granodiorite,-69.4634,-23.3873,1768,40.87,,,2.22,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD20,09PRAD21aA,,Kssb(a) El Buitre K-Pg granodiorite,-69.466,-23.3893,1662,53.15,,,1.5,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD21,09PRAD21a1,,Kssb(a) El Buitre K-Pg granodiorite,-69.4672,-23.3914,1598,41.89,,,1.58,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD21,09PRAD21a2,,Kssb(a) El Buitre K-Pg granodiorite,-69.4672,-23.3914,1598,44.29,,,1.87,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD21,09PRAD21a3,,Kssb(a) El Buitre K-Pg granodiorite,-69.4672,-23.3914,1598,42.49,,,2.1,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD21,09PRAD21a-1,,Kssb(a) El Buitre K-Pg granodiorite,-69.4672,-23.3914,1598,46.15,,,1.49,,,,,AHe,Reiners_2015(Geodynamics)
+,,09PRAD21,09PRAD21a-2,,Kssb(a) El Buitre K-Pg granodiorite,-69.4672,-23.3914,1598,43.65,,,1.21,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD06,KMAD06aA,,Loma Amarilla,-68.6248,-23.6904,2563,44.44,,,1.3,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD06,KMAD06aB,,Loma Amarilla,-68.6248,-23.6904,2563,34.45,,,4.18,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD08,KMAD08aA,,Loma Amarilla,-68.6714,-23.6989,3095,42.34,,,0.78,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD08,KMAD08aB,,Loma Amarilla,-68.6714,-23.6989,3095,54.94,,,1.15,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD08,KMAD08aC,,Loma Amarilla,-68.6714,-23.6989,3095,55.35,,,0.89,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD09,KMAD09aA,,Loma Amarilla,-68.6503,-23.6988,2859,38.02,,,1,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD09,KMAD09aB,,Loma Amarilla,-68.6714,-23.6989,3095,48.23,,,1.13,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD09,KMAD09aC,,Loma Amarilla,-68.6714,-23.6989,3095,33.19,,,1.26,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD11,KMAD11aA,,Loma Amarilla,-68.6424,-23.6976,2738,26.71,,,0.86,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD11,KMAD11aC,,Loma Amarilla,-68.6424,-23.6976,2738,47.54,,,1.26,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD11,KMAD11aD,,Loma Amarilla,-68.6424,-23.6976,2738,29.88,,,1.46,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD13,KMAD13aA,,Loma Amarilla,-68.6336,-23.6969,2650,25.44,,,0.7,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD13,KMAD13aC,,Loma Amarilla,-68.6336,-23.6969,2650,31.69,,,1.63,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD14,KMAD14aA,,Loma Amarilla,-68.6252,-23.6023,2489,20.39,,,3.5,,,,,AHe,Reiners_2015(Geodynamics)
+,,KMAD14,KMAD14aB,,Loma Amarilla,-68.6252,-23.6023,2489,22.31,,,0.88,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA01,09AA01_A_1,,Paleozoic migmatite/granitoid de Sierra Moreno ,-69.0812,-21.7097,2193,55.62,,,1.3,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA01,09AA01_A_2,,Paleozoic migmatite/granitoid de Sierra Moreno ,-69.0812,-21.7097,2193,60.84,,,1.43,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA01,09AA01_A_3,,Paleozoic migmatite/granitoid de Sierra Moreno ,-69.0812,-21.7097,2193,61.66,,,1.45,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA13,09AA13_A_1,,Cretaceous porphyry dike (Ksg),-68.6753,-21.842,4384,53.43,,,0.9,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA13,09AA13_A_2,,Cretaceous porphyry dike (Ksg),-68.6753,-21.842,4384,50.42,,,0.83,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA13,09AA13_A_3,,Cretaceous porphyry dike (Ksg),-68.6753,-21.842,4384,48.37,,,0.8,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA14,09AA14_A_2,,Cretaceous porphyry dike (Ksg),-68.6786,-21.8397,4274,49.87,,,0.85,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA14,09AA14_A_3,,Cretaceous porphyry dike (Ksg),-68.6786,-21.8397,4274,50,,,0.84,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA15,09AA15A_A_1,,Cretaceous porphyry dike (Ksg),-68.6855,21.8381,4069,40.62,,,0.7,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA15,09AA15A_A_3,,Cretaceous porphyry dike (Ksg),-68.6855,21.8381,4069,45.21,,,0.81,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA17,09AA17A_A_1,,Cretaceous porphyry dike (Ksg),-68.6926,-21.838,3784,43.02,,,0.7,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA17,09AA17A_A_2,,Cretaceous porphyry dike (Ksg),-68.6926,-21.838,3784,51.01,,,0.87,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA17,09AA17A_A_3,,Cretaceous porphyry dike (Ksg),-68.6926,-21.838,3784,44.67,,,0.73,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA18,09AA18_A_1,,Cretaceous porphyry dike (Ksg),-68.6944,-21.8338,3655,45.83,,,0.79,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA18,09AA18_A_2,,Cretaceous porphyry dike (Ksg),-68.6944,-21.8338,3655,38.56,,,0.6,,,,,AHe,Reiners_2015(Geodynamics)
+,,09AA18,09AA18_A_3,,Cretaceous porphyry dike (Ksg),-68.6944,-21.8338,3655,37.03,,,0.59,,,,,AHe,Reiners_2015(Geodynamics)
