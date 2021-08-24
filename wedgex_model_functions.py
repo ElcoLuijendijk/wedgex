@@ -1,6 +1,12 @@
+import itertools
 import numpy as np
 import sklearn.metrics
 import wedgeqs
+
+import scipy.interpolate
+
+# optional: advective-conductive heat flow model
+import lib.heat_flow_model as hf
 
 
 def misfit_function(M, sigma, C):
@@ -68,6 +74,26 @@ def run_model_multiple_samples(t, x0s, alpha, beta, L, vc, vd, vxa, vya):
     return xp, yp, dp
 
 
+def interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T):
+
+    T_history_samples = np.zeros_like(x_samples)
+    
+    Txy = np.vstack([Tx, Ty]).T
+    
+    # interpolate to get T values for samples from modelled T mesh
+    T_int = scipy.interpolate.LinearNDInterpolator(Txy, T) #,rescale=False)
+    
+    #xy_samples = np.vstack([x_samples, y_samples])
+    
+    for i, xsi, ysi in zip(itertools.count(), x_samples, y_samples):
+        xysi = np.vstack([xsi, ysi]).T
+        
+        ind_ok = np.any(np.isnan(xysi) == False, axis=1)
+        T_history_samples[i][ind_ok] = T_int(xysi[ind_ok])
+        T_history_samples[i][ind_ok==False] = np.nan
+        
+    return T_history_samples
+
 
 def calculate_cooling_ages(t, x_samples, d_samples, resetting_temperatures_samples, T_history_samples,
                            surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
@@ -92,7 +118,7 @@ def calculate_cooling_ages(t, x_samples, d_samples, resetting_temperatures_sampl
 
         # if the particle is in the model domain at least part of the time
         if np.any(ind):
-
+            
             #T_history_sample = surface_Ts + ds * geothermal_gradient
 
             # get age of sample for section in the model domain
@@ -368,11 +394,27 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     
     y0_samples = x_samples * alpha
     
-    modelled_ages = calculate_cooling_ages(t, x_samples, d_samples, alpha, 
-                                           resetting_temperatures_samples, 
-                                           surface_temperature_sea_lvl, 
-                                           lapse_rate, geothermal_gradient,
-                                           default_exhumation_rate, L)
+    #
+    Tx, Ty, T = hf.model_heat_transport(L, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_footwall, 
+                                        vd / year, vc / year, vxa / year, vya / year, v_downgoing, surface_temperature_sea_lvl, 
+                                        lapse_rate, lab_temp, 
+                                        K, rho, c, H0, e_folding_depth)
+    
+    print('numerical heat transport model done')
+    
+    #modelled_ages = calculate_cooling_ages(t, x_samples, d_samples, alpha, 
+    #                                       resetting_temperatures_samples, 
+    #                                       surface_temperature_sea_lvl, 
+    #                                       lapse_rate, geothermal_gradient,
+    #                                       default_exhumation_rate, L)
+    
+    if thermochron_model == 'simple':
+    
+        modelled_ages = wedgex_model_functions.calculate_cooling_ages(
+                               t, x_samples, d_samples, resetting_temperatures_samples, T_history_samples,
+                               surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
+                               default_exhumation_rate, L)
+
     
     if verbose is True:
         print('modelled ages, min., mean, max.: ', 
