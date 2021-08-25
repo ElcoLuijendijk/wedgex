@@ -1,3 +1,4 @@
+import sys
 import itertools
 import numpy as np
 import sklearn.metrics
@@ -292,6 +293,9 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                                        measured_ages, age_uncertainty, resetting_temperatures_samples,
                                        default_exhumation_rate,
                                        metric_to_return,
+                                       Ly, Lxmin, cellsize_wedge, cellsize_footwall, 
+                                       lab_temp, K, rho, c, H0, e_folding_depth, v_downgoing,
+                                       thermochron_model,
                                        return_all=False,
                                        verbose=False):
     
@@ -356,6 +360,8 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
         Mean absolute error modelled and measured ages (Ma)
     """
     
+    year = 365.25 * 24 * 3600.
+    
     #vc, vd, vxa, vya = params
     
     if 'alpha' in params_to_change:
@@ -400,7 +406,10 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                                         lapse_rate, lab_temp, 
                                         K, rho, c, H0, e_folding_depth)
     
-    print('numerical heat transport model done')
+    #print('numerical heat transport model done')
+    #sys.stdout.write("\r" + str(f))
+    sys.stdout.write('.')
+    sys.stdout.flush()
     
     #modelled_ages = calculate_cooling_ages(t, x_samples, d_samples, alpha, 
     #                                       resetting_temperatures_samples, 
@@ -408,9 +417,12 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     #                                       lapse_rate, geothermal_gradient,
     #                                       default_exhumation_rate, L)
     
+    # get temp history of samples
+    T_history_samples = interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T)
+
     if thermochron_model == 'simple':
     
-        modelled_ages = wedgex_model_functions.calculate_cooling_ages(
+        modelled_ages = calculate_cooling_ages(
                                t, x_samples, d_samples, resetting_temperatures_samples, T_history_samples,
                                surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
                                default_exhumation_rate, L)
