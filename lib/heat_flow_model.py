@@ -132,7 +132,7 @@ def interpolate_data(xyz_array, data, dx, dy, limit_number_of_nodes=True, max_no
 def model_heat_transport(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_footwall, 
                          vd, vc, vxa, vya, v_downgoing, 
                         sea_lvl_temp, lapse_rate, lab_temp, K, rho, c, H0, e_folding_depth):
- 
+    
     # create mesh
     mesh = create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_footwall)
 

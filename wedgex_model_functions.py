@@ -16,7 +16,7 @@ import lib.heat_flow_model as hf
 
 
 
-def calculate_closure_temp(time, temp, thermochron_system):
+def calculate_closure_temp(time, temp, thermochron_system, min_gradient=1e-7*u.K/u.year):
     
     """
     calculate closure temperatures using Dodson's (1973) equations
@@ -33,13 +33,13 @@ def calculate_closure_temp(time, temp, thermochron_system):
     if thermochron_system == 'AFT':
         # here are Ea and D0/a2 values for AFT from ketcham. 1999
         # taken from reiners 2004
-        energy = 147 * u.J / u.mol
+        energy = 147 * 1e3 * u.J / u.mol
         geom = 1
         diff = 2.05e6 / u.s
     elif thermochron_system == 'ZFT':
         #here are Ea and D0/a2 values for ZFT from reiners2004
         #taken from reiners 2004
-        energy = 208 * u.J / u.mol #!/(4.184*1.e3)
+        energy = 208 * 1e3 * u.J / u.mol #!/(4.184*1.e3)
         geom = 1
         diff = 4.0e8 / u.s
         #energy=224.d3
@@ -49,13 +49,13 @@ def calculate_closure_temp(time, temp, thermochron_system):
     elif thermochron_system == 'AHe':
         # here are Ea and D0/a2 values for AHe from Farley et al. 2000
         # taken from reiners 2004
-        energy = 138 * u.J / u.mol
+        energy = 138 * 1e3 * u.J / u.mol
         geom = 1
         diff = 7.64e7 / u.s
     elif thermochron_system == 'ZHe':
         #here are Ea and D0/a2 values for ZHe from reiners2004
         #taken from reiners 2004
-        energy = 169 * u.J / u.mol #!/(4.184*1.e3)
+        energy = 169 * 1e3 * u.J / u.mol #!/(4.184*1.e3)
         geom = 1
         diff = 7.03e5 / u.s
         #energy=178.d3
@@ -66,19 +66,22 @@ def calculate_closure_temp(time, temp, thermochron_system):
     elif thermochron_system == 'hbl':
         #here are Ea and D0/a2 values for hbl from harrison81
         #taken from reiners 2004
-        energy=268 * u.J / u.mol
+        energy=268 * 1e3 * u.J / u.mol
         geom=1
         diff=1320 / u.s
-    elif thermochron_system == 'mus':
+    elif thermochron_system == 'MAr':
         # here are Ea and D0/a2 values for mus from hames&bowring1994,robbins72
         # taken from reiners 2004
-        energy=180 * u.J / u.mol
+        energy=180 * 1e3 * u.J / u.mol
         geom=1
-        diff=3.91 / u.s
+        #diff=3.91 / u.s
+        
+        # note correction in manuscript Reiners (2006):
+        diff = 17.2 / u.s
     elif thermochron_system == 'bio':
         #here are Ea and D0/a2 values for bio from grove&harrison1996
         #taken from reiners 2004
-        energy = 197 * u.J / u.mol
+        energy = 197 * 1e3 * u.J / u.mol
         geom = 1
         diff = 733. / u.s
 
@@ -88,10 +91,15 @@ def calculate_closure_temp(time, temp, thermochron_system):
 
     r = 8.314 * u.J / (u.K * u.mol)
 
-    time = np.linspace(0, 10, 100)  * 1e6 * u.year
-    temp = (np.linspace(10, 150, 100) - 273.15) * u.K
-
     cooling = np.gradient(temp, time)
+    
+    #print(cooling)
+    
+    ind = cooling < min_gradient
+    cooling[ind] = min_gradient
+    
+    #print(cooling.mean())
+    
     tau = r * temp**2 / (energy * cooling)
     Tc = energy / (r * np.log(geom * tau * diff))
     
@@ -106,18 +114,38 @@ def calculate_closure_age(time, temp, thermochron_system):
     
     Tc = calculate_closure_temp(time, temp, thermochron_system)
     
-    xy1 = np.vstack([time.to(u.year).value, temp.value]).T
-    xy2 =  np.vstack([time.to(u.year).value, Tc.value]).T
-    line1 = LineString(xy1)
-    line2 = LineString(xy2)
-
-    int_pt = line1.intersection(line2)
-    point_of_intersection = int_pt.x, int_pt.y
-
-    age = int_pt.x * u.year
-    Tc_int = int_pt.y * u.K
+    if Tc.max() < temp.min() or Tc.min() > temp.max():
+        print('warning, cooling temp outside of range of thermochron temps')
+        
+        #print('range: ', Tc.min(), Tc.max())
+        #raise ValueError
+        
+        return np.nan, np.nan
     
-    return age
+    else:
+        xy1 = np.vstack([time.to(u.year).value, temp.value]).T
+        xy2 =  np.vstack([time.to(u.year).value, Tc.value]).T
+        line1 = LineString(xy1)
+        line2 = LineString(xy2)
+
+        int_pt = line1.intersection(line2)
+        if int_pt.type == 'MultiPoint':
+            xi, yi = int_pt[0].x, int_pt[0].y
+        elif int_pt.type == 'LineString':
+            if len(int_pt.coords) > 0:
+            
+                xi, yi = int_pt.coords.xy[:, 0], int_pt.coords.xy[:, 1]
+            else:
+                return np.nan, np.nan
+        else:
+            xi, yi = int_pt.x, int_pt.y
+
+        
+
+        age = xi * u.year
+        Tc_int = yi * u.K
+
+        return age, Tc_int
 
 
 
@@ -401,14 +429,14 @@ def calculate_cooling_ages_old(t, x_samples, d_samples, alpha, resetting_tempera
 def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t, x0_samples, 
                                        alpha, beta, L, vc, vd, vxa, vya, 
                                        surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
-                                       measured_ages, age_uncertainty, resetting_temperatures_samples,
+                                       measured_ages, age_uncertainty,
                                        default_exhumation_rate,
                                        metric_to_return,
                                        Ly, Lxmin, cellsize_wedge, cellsize_footwall, 
                                        lab_temp, K, rho, c, H0, e_folding_depth, v_downgoing,
-                                       thermochron_model,
+                                       thermochron_model, thermochron_systems, thermochron_system_samples,
                                        return_all=False,
-                                       verbose=False):
+                                       verbose=True):
     
     """
     Calculate particle trajectories and cooling ages and compare these to measured ages
@@ -482,25 +510,25 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     if 'geothermal_gradient' in params_to_change:
         geothermal_gradient = params[params_to_change.index('geothermal_gradient')]
     if 'vc' in params_to_change:
-        vc = params[params_to_change.index('vc')]
+        vc = params[params_to_change.index('vc')] * u.m / u.year
     if 'vd' in params_to_change:
-        vd = params[params_to_change.index('vd')]
+        vd = params[params_to_change.index('vd')]  * u.m / u.year
     if 'vxa' in params_to_change:
-        vxa = params[params_to_change.index('vxa')]
+        vxa = params[params_to_change.index('vxa')]  * u.m / u.year
     if 'vya' in params_to_change:
-        vya = params[params_to_change.index('vya')]
+        vya = params[params_to_change.index('vya')]  * u.m / u.year
     
     if limit_params is True:
         # make sure params have correct sign
         # negative for vc, vd and positive for vxa, vya
         if vc >= 0:
-            vc = -1e-7
+            vc = -1e-7 * u.m / u.year
         if vd >= 0:
-            vd = -1e-7
+            vd = -1e-7 * u.m / u.year
         if vxa < 0:
-            vxa = 0
+            vxa = 0 * u.m / u.year
         if vya <0:
-            vya = 0
+            vya = 0 * u.m / u.year
     
     if verbose is True:
         print('parameters that were changed: ', params_to_change)
@@ -509,14 +537,37 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     x_samples, y_samples, d_samples = run_model_multiple_samples(t, x0_samples, 
                                                                  alpha, beta, L, vc, vd, vxa, vya)
     
+    #print(t, x0_samples, alpha, beta, L, vc, vd, vxa, vya)
+    #print(x_samples, y_samples)
+    #print(bla)
+    
     y0_samples = x_samples * alpha
     
-    #
-    Tx, Ty, T = hf.model_heat_transport(L, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_footwall, 
-                                        vd / year, vc / year, vxa / year, vya / year, v_downgoing, surface_temperature_sea_lvl, 
-                                        lapse_rate, lab_temp, 
-                                        K, rho, c, H0, e_folding_depth)
     
+    # remove dimensions
+    L_, Ly_, Lxmin_, cellsize_wedge_, cellsize_footwall_ = \
+    L.to(u.m).value, Ly.to(u.m).value, Lxmin.to(u.m).value, cellsize_wedge.to(u.m).value, cellsize_footwall.to(u.m).value
+
+    x0_samples_ = x0_samples.to(u.m).value
+
+    vd_, vc_, vxa_, vya_, v_downgoing_ = \
+    vd.to(u.m/u.s).value, vc.to(u.m/u.s).value, vxa.to(u.m/u.s).value, vya.to(u.m/u.s).value, v_downgoing.to(u.m/u.s).value
+
+    t_ = t.to(u.s).value
+    #
+    #Tx, Ty, T = hf.model_heat_transport(L, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_footwall, 
+    #                                    vd / year, vc / year, vxa / year, vya / year, v_downgoing, surface_temperature_sea_lvl, 
+    #                                    lapse_rate, lab_temp, 
+    #                                    K, rho, c, H0, e_folding_depth)
+    
+    
+    Tx_, Ty_, T_ = hf.model_heat_transport(L_, Ly_, alpha, beta, Lxmin_, cellsize_wedge_, cellsize_footwall_, 
+                                    vd_, vc_, vxa_, vya_, v_downgoing_, surface_temperature_sea_lvl.value, 
+                                    lapse_rate.value, lab_temp.value, 
+                                    K.value, rho.value, c.value, H0.value, e_folding_depth)
+
+    Tx, Ty, T = Tx_ * u.m, Ty_ * u.m, T_ * u.deg_C
+
     #print('numerical heat transport model done')
     #sys.stdout.write("\r" + str(f))
     sys.stdout.write('.')
@@ -529,8 +580,12 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     #                                       default_exhumation_rate, L)
     
     # get temp history of samples
-    T_history_samples = interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T)
-
+    T_history_samples = interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T) * u.deg_C
+    
+    #print(T_history_samples[20])
+    #print(x_samples, y_samples, Tx, Ty, T)
+    #print(bla)
+    
     if thermochron_model == 'simple':
     
         modelled_ages = calculate_cooling_ages(
@@ -540,15 +595,48 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
         
     elif thermochron_model == 'Dodson':
         
-        #calculate_closure_age(time, temp, thermochron_system)
-        pass
-    
-    
+        n_samples = len(x_samples)
+        modelled_ages = np.zeros((n_samples)) * u.year
+
+        for i, tcs in enumerate(thermochron_systems):
+        
+            inds = thermochron_system_samples == tcs
+            
+            #print(np.sum(inds))
+            
+            for j in range(n_samples):
+                if inds[j] == True:
+                    #print('ok ',j)
+                    Tpi = T_history_samples[j].to(u.K, equivalencies=u.temperature()) 
+                    ind_ok = np.isnan(Tpi) == False
+                    
+                    ti = -t[ind_ok]
+                    
+                    #print(len(Tpi), np.sum(ind_ok))
+                    
+                    if np.sum(ind_ok) > 1:
+                        
+                        #print(t[ind_ok], Tpi[ind_ok], tcs)
+                        
+                        a, ct = calculate_closure_age(ti.to(u.s), Tpi[ind_ok], tcs)
+                        modelled_ages[j] = a
+                    else:
+                        #print(Tpi)
+                        #print(bla)
+                        pass
+                else:
+                    pass
+                
+                #print(j, inds[j])
+                        
     if verbose is True:
         print('modelled ages, min., mean, max.: ', 
               modelled_ages.min(), 
               modelled_ages.mean(), 
               modelled_ages.max())
+        
+        
+        #print(bla)
     
     data = measured_ages
     prediction = modelled_ages
@@ -574,7 +662,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
         print('\tchi squared = ', chi_sq)
     
     if return_all is True:
-        return (y0_samples, x_samples, y_samples, resetting_temperatures_samples, d_samples, 
+        return (y0_samples, x_samples, y_samples, d_samples, 
                 data, prediction, ME, MAE, R2)
     if metric_to_return == 'all':
         return ME, MAE, R2
