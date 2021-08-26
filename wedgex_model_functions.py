@@ -72,12 +72,22 @@ def calculate_closure_temp(time, temp, thermochron_system, min_gradient=1e-7*u.K
     elif thermochron_system == 'MAr':
         # here are Ea and D0/a2 values for mus from hames&bowring1994,robbins72
         # taken from reiners 2004
-        energy=180 * 1e3 * u.J / u.mol
+        energy = 180 * 1e3 * u.J / u.mol
         geom=1
-        #diff=3.91 / u.s
+        diff=3.91 / u.s
         
         # note correction in manuscript Reiners (2006):
-        diff = 17.2 / u.s
+        #diff = 17.2 / u.s
+        
+        # Alternative values in Harrison et al. (2009, https://doi.org/10.1016/j.gca.2008.09.038)
+        # as cited in McDonald et al.  (2018, https://doi.org/10.1111/ter.12390)
+        #energy = 263592 * u.J / u.mol
+        #geom = 1
+        #D0 = 2.3e-4 * u.m**2 / u.s
+        #a = 100.0 * 1e-6 * u.m
+        #diff = D0 / a**2
+        
+        
     elif thermochron_system == 'bio':
         #here are Ea and D0/a2 values for bio from grove&harrison1996
         #taken from reiners 2004
@@ -502,6 +512,16 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     year = 365.25 * 24 * 3600.
     
     #vc, vd, vxa, vya = params
+    
+    if 'convergence' in params_to_change:
+        conv = params[params_to_change.index('convergence')] * u.m / u.year
+        conv_part = params[params_to_change.index('conv_part')]
+        def_part = params[params_to_change.index('deform_part')]
+        
+        v_downgoing = conv * conv_part 
+        v_wedge = (1.0 - conv_part) * conv
+        vc = def_part * v_wedge
+        vd = (1.0 - def_part) * v_wedge
     
     if 'alpha' in params_to_change:
         alpha = params[params_to_change.index('alpha')]
