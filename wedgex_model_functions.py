@@ -6,8 +6,119 @@ import wedgeqs
 
 import scipy.interpolate
 
+import shapely
+from shapely.geometry import LineString, Point
+
+import astropy.units as u
+
 # optional: advective-conductive heat flow model
 import lib.heat_flow_model as hf
+
+
+
+def calculate_closure_temp(time, temp, thermochron_system):
+    
+    """
+    calculate closure temperatures using Dodson's (1973) equations
+    
+    shamelessly copied from glide's fortran code:
+    https://github.com/cirederf13/glide/blob/master/transient_geotherm/src/closure_temps.f90
+    https://github.com/cirederf13/glide/blob/master/transient_geotherm/src/dodson.f90
+    
+    """
+    
+    #Myr = 3600.*24.*365.25e6
+    
+    # these values are taken from reiners' review paper and correspond to Ea (x1000.) and omega (x secinyr)      
+    if thermochron_system == 'AFT':
+        # here are Ea and D0/a2 values for AFT from ketcham. 1999
+        # taken from reiners 2004
+        energy = 147 * u.J / u.mol
+        geom = 1
+        diff = 2.05e6 / u.s
+    elif thermochron_system == 'ZFT':
+        #here are Ea and D0/a2 values for ZFT from reiners2004
+        #taken from reiners 2004
+        energy = 208 * u.J / u.mol #!/(4.184*1.e3)
+        geom = 1
+        diff = 4.0e8 / u.s
+        #energy=224.d3
+        #geom=1.d0
+        #diff=1.24e8*3600.*24.*365.25e6
+        #diff = 1.24e8*3600.*24.*365.25e6
+    elif thermochron_system == 'AHe':
+        # here are Ea and D0/a2 values for AHe from Farley et al. 2000
+        # taken from reiners 2004
+        energy = 138 * u.J / u.mol
+        geom = 1
+        diff = 7.64e7 / u.s
+    elif thermochron_system == 'ZHe':
+        #here are Ea and D0/a2 values for ZHe from reiners2004
+        #taken from reiners 2004
+        energy = 169 * u.J / u.mol #!/(4.184*1.e3)
+        geom = 1
+        diff = 7.03e5 / u.s
+        #energy=178.d3
+        #geom=1.d0
+        #diff=7.03d5*3600.d0*24.d0*365.25d6
+
+    #the following are for argon argon, might be a bit much for most, 51,52,53 in glide
+    elif thermochron_system == 'hbl':
+        #here are Ea and D0/a2 values for hbl from harrison81
+        #taken from reiners 2004
+        energy=268 * u.J / u.mol
+        geom=1
+        diff=1320 / u.s
+    elif thermochron_system == 'mus':
+        # here are Ea and D0/a2 values for mus from hames&bowring1994,robbins72
+        # taken from reiners 2004
+        energy=180 * u.J / u.mol
+        geom=1
+        diff=3.91 / u.s
+    elif thermochron_system == 'bio':
+        #here are Ea and D0/a2 values for bio from grove&harrison1996
+        #taken from reiners 2004
+        energy = 197 * u.J / u.mol
+        geom = 1
+        diff = 733. / u.s
+
+    #energy = 147.0 * 1e3 * u.J / u.mol
+    #geom = 1.0
+    #diff = 2.05e6 / u.s
+
+    r = 8.314 * u.J / (u.K * u.mol)
+
+    time = np.linspace(0, 10, 100)  * 1e6 * u.year
+    temp = (np.linspace(10, 150, 100) - 273.15) * u.K
+
+    cooling = np.gradient(temp, time)
+    tau = r * temp**2 / (energy * cooling)
+    Tc = energy / (r * np.log(geom * tau * diff))
+    
+    return Tc
+
+
+def calculate_closure_age(time, temp, thermochron_system):
+    
+    """
+    first calculate closure temperatures and then find the intersection between the closure temperature vs time curve and the temperature vs time curve
+    """
+    
+    Tc = calculate_closure_temp(time, temp, thermochron_system)
+    
+    xy1 = np.vstack([time.to(u.year).value, temp.value]).T
+    xy2 =  np.vstack([time.to(u.year).value, Tc.value]).T
+    line1 = LineString(xy1)
+    line2 = LineString(xy2)
+
+    int_pt = line1.intersection(line2)
+    point_of_intersection = int_pt.x, int_pt.y
+
+    age = int_pt.x * u.year
+    Tc_int = int_pt.y * u.K
+    
+    return age
+
 
 
 def misfit_function(M, sigma, C):
@@ -96,11 +207,11 @@ def interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T):
     return T_history_samples
 
 
-def calculate_cooling_ages(t, x_samples, d_samples, resetting_temperatures_samples, T_history_samples,
-                           surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
-                           default_exhumation_rate, L,
-                           calculate_non_reset_age=True, buffer=0.99,
-                           verbose=False, debug=True):
+def calculate_cooling_ages_simple(t, x_samples, d_samples, resetting_temperatures_samples, T_history_samples,
+                                   surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
+                                   default_exhumation_rate, L,
+                                   calculate_non_reset_age=True, buffer=0.99,
+                                   verbose=False, debug=True):
     
     
     n_samples = len(d_samples)
@@ -426,7 +537,12 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                                t, x_samples, d_samples, resetting_temperatures_samples, T_history_samples,
                                surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
                                default_exhumation_rate, L)
-
+        
+    elif thermochron_model == 'Dodson':
+        
+        #calculate_closure_age(time, temp, thermochron_system)
+        pass
+    
     
     if verbose is True:
         print('modelled ages, min., mean, max.: ', 
