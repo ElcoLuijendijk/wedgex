@@ -158,7 +158,22 @@ def calculate_closure_age(time, temp, thermochron_system):
         return age, Tc_int
 
 
+def calculate_closure_age_simple(time, temp, resetting_temp):
+    
+    #ind = np.isnan(temp==False)
+    
+    Tr = resetting_temp.to(u.K, equivalencies=u.temperature())
 
+    
+    try:
+        age = np.interp([Tr], temp, time, left=np.nan, right=np.nan)[0]
+    except:
+        print([Tr], temp, time)
+        raise ValueError
+        
+    return age
+    
+    
 def misfit_function(M, sigma, C):
     
     """
@@ -225,13 +240,13 @@ def run_model_multiple_samples(t, x0s, alpha, beta, L, vc, vd, vxa, vya):
 
 
 def interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T):
-
-    T_history_samples = np.zeros_like(x_samples)
+    
+    T_history_samples = np.zeros(x_samples.shape) * u.deg_C
     
     Txy = np.vstack([Tx, Ty]).T
     
     # interpolate to get T values for samples from modelled T mesh
-    T_int = scipy.interpolate.LinearNDInterpolator(Txy, T) #,rescale=False)
+    T_int = scipy.interpolate.LinearNDInterpolator(Txy, T) #,rescale=False) 
     
     #xy_samples = np.vstack([x_samples, y_samples])
     
@@ -239,7 +254,8 @@ def interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T):
         xysi = np.vstack([xsi, ysi]).T
         
         ind_ok = np.any(np.isnan(xysi) == False, axis=1)
-        T_history_samples[i][ind_ok] = T_int(xysi[ind_ok])
+        
+        T_history_samples[i][ind_ok] = T_int(xysi[ind_ok].value) * u.deg_C
         T_history_samples[i][ind_ok==False] = np.nan
         
     return T_history_samples
@@ -256,7 +272,7 @@ def calculate_cooling_ages_simple(t, x_samples, d_samples, resetting_temperature
     calculate_non_reset_age = True
     buffer = 0.99
 
-    modelled_age_samples = np.zeros((n_samples))
+    modelled_age_samples = np.zeros((n_samples)) * u.year
 
     for j, resetting_temperature_sample,  xs, ds, T_history_sample in zip(list(range(n_samples)), 
                                                                  resetting_temperatures_samples, 
@@ -274,7 +290,8 @@ def calculate_cooling_ages_simple(t, x_samples, d_samples, resetting_temperature
             # get age of sample for section in the model domain
             # if max temp < resetting temp
             if T_history_sample[ind].max() > resetting_temperature_sample:
-                age_int = np.interp(resetting_temperature_sample, T_history_sample[ind], t[ind])
+                age_int = np.interp(resetting_temperature_sample, T_history_sample[ind], t[ind]) 
+                
             # otherwise assume that the sample was at the same temp as the last 
             elif calculate_non_reset_age is True:
 
@@ -313,7 +330,10 @@ def calculate_cooling_ages_simple(t, x_samples, d_samples, resetting_temperature
             age_int = np.nan
 
         if np.isnan(age_int) == False:
-            modelled_age_samples[j] = -age_int / 1e6
+            try:
+                modelled_age_samples[j] = -age_int / 1e6
+            except:
+                print(modelled_age_samples[j], age_int, default_exhumation_rate, geothermal_gradient)
         else:
             modelled_age_samples[j] = np.nan
         
