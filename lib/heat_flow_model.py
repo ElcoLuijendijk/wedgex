@@ -235,5 +235,7 @@ def model_heat_transport(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_fo
     # convert result to arrays
     T_array = T(mesh.cellCenters.globalValue)
     x, y = mesh.cellCenters.globalValue
+    
+    #q_array = q(mesh.cellCenters.globalValue)
 
-    return x, y, T_array
+    return x, y, T_array, q, mesh

@@ -87,7 +87,6 @@ def calculate_closure_temp(time, temp, thermochron_system, min_gradient=1e-7*u.K
         #a = 100.0 * 1e-6 * u.m
         #diff = D0 / a**2
         
-        
     elif thermochron_system == 'bio':
         #here are Ea and D0/a2 values for bio from grove&harrison1996
         #taken from reiners 2004
@@ -119,7 +118,8 @@ def calculate_closure_temp(time, temp, thermochron_system, min_gradient=1e-7*u.K
 def calculate_closure_age(time, temp, thermochron_system):
     
     """
-    first calculate closure temperatures and then find the intersection between the closure temperature vs time curve and the temperature vs time curve
+    first calculate closure temperatures and then find the intersection between the closure temperature vs time curve 
+    and the temperature vs time curve
     """
     
     Tc = calculate_closure_temp(time, temp, thermochron_system)
@@ -159,6 +159,10 @@ def calculate_closure_age(time, temp, thermochron_system):
 
 
 def calculate_closure_age_simple(time, temp, resetting_temp):
+    
+    """
+    calculate thermochronometer closure age using a fixed closure temperature
+    """
     
     #ind = np.isnan(temp==False)
     
@@ -255,7 +259,7 @@ def interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T):
         
         ind_ok = np.any(np.isnan(xysi) == False, axis=1)
         
-        T_history_samples[i][ind_ok] = T_int(xysi[ind_ok].value) * u.deg_C
+        T_history_samples[i][ind_ok] = T_int(xysi[ind_ok]) * u.deg_C
         T_history_samples[i][ind_ok==False] = np.nan
         
     return T_history_samples
@@ -465,6 +469,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                                        Ly, Lxmin, cellsize_wedge, cellsize_footwall, 
                                        lab_temp, K, rho, c, H0, e_folding_depth, v_downgoing,
                                        thermochron_model, thermochron_systems, thermochron_system_samples,
+                                       resetting_temperatures,
                                        return_all=False,
                                        verbose=True):
     
@@ -539,7 +544,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
         def_part = params[params_to_change.index('deform_part')]
         
         v_downgoing = conv * conv_part 
-        v_wedge = (1.0 - conv_part) * conv
+        v_wedge = - (1.0 - conv_part) * conv
         vc = def_part * v_wedge
         vd = (1.0 - def_part) * v_wedge
     
@@ -601,7 +606,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     #                                    K, rho, c, H0, e_folding_depth)
     
     
-    Tx_, Ty_, T_ = hf.model_heat_transport(L_, Ly_, alpha, beta, Lxmin_, cellsize_wedge_, cellsize_footwall_, 
+    Tx_, Ty_, T_, q, mesh = hf.model_heat_transport(L_, Ly_, alpha, beta, Lxmin_, cellsize_wedge_, cellsize_footwall_, 
                                     vd_, vc_, vxa_, vya_, v_downgoing_, surface_temperature_sea_lvl.value, 
                                     lapse_rate.value, lab_temp.value, 
                                     K.value, rho.value, c.value, H0.value, e_folding_depth)
@@ -620,54 +625,50 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     #                                       default_exhumation_rate, L)
     
     # get temp history of samples
-    T_history_samples = interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T) * u.deg_C
+    T_history_samples = interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T)
     
     #print(T_history_samples[20])
     #print(x_samples, y_samples, Tx, Ty, T)
     #print(bla)
     
-    if thermochron_model == 'simple':
-    
-        modelled_ages = calculate_cooling_ages(
-                               t, x_samples, d_samples, resetting_temperatures_samples, T_history_samples,
-                               surface_temperature_sea_lvl, lapse_rate, geothermal_gradient,
-                               default_exhumation_rate, L)
-        
-    elif thermochron_model == 'Dodson':
-        
-        n_samples = len(x_samples)
-        modelled_ages = np.zeros((n_samples)) * u.year
 
-        for i, tcs in enumerate(thermochron_systems):
-        
-            inds = thermochron_system_samples == tcs
-            
-            #print(np.sum(inds))
-            
-            for j in range(n_samples):
-                if inds[j] == True:
-                    #print('ok ',j)
-                    Tpi = T_history_samples[j].to(u.K, equivalencies=u.temperature()) 
-                    ind_ok = np.isnan(Tpi) == False
-                    
-                    ti = -t[ind_ok]
-                    
-                    #print(len(Tpi), np.sum(ind_ok))
-                    
-                    if np.sum(ind_ok) > 1:
-                        
-                        #print(t[ind_ok], Tpi[ind_ok], tcs)
-                        
-                        a, ct = calculate_closure_age(ti.to(u.s), Tpi[ind_ok], tcs)
-                        modelled_ages[j] = a
+    n_samples = len(x_samples)
+    modelled_ages = np.zeros((n_samples)) * u.year
+
+    for i, tcs in enumerate(thermochron_systems):
+
+        inds = thermochron_system_samples == tcs
+
+        #print(np.sum(inds))
+
+        for j in range(n_samples):
+            if inds[j] == True:
+                #print('ok ',j)
+                Tpi = T_history_samples[j].to(u.K, equivalencies=u.temperature()) 
+                ind_ok = np.isnan(Tpi) == False
+
+                ti = -t[ind_ok]
+
+                #print(len(Tpi), np.sum(ind_ok))
+
+                if np.sum(ind_ok) > 1:
+
+                    #print(t[ind_ok], Tpi[ind_ok], tcs)
+                    if thermochron_model == 'simple':
+                        modelled_ages[j] = calculate_closure_age_simple(-t[ind_ok], Tpi[ind_ok], resetting_temperatures[i])
                     else:
-                        #print(Tpi)
-                        #print(bla)
-                        pass
+                        #modelled_ages_samples[j], ct = wedgex_model_functions.calculate_closure_age(-t[ind], Tpi[ind], tcs)
+
+                        modelled_ages[j] = calculate_closure_age(ti.to(u.s), Tpi[ind_ok], tcs)
+                    #modelled_ages[j] = a
                 else:
+                    #print(Tpi)
+                    #print(bla)
                     pass
-                
-                #print(j, inds[j])
+            else:
+                pass
+
+            #print(j, inds[j])
                         
     if verbose is True:
         print('modelled ages, min., mean, max.: ', 
