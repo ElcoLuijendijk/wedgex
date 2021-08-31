@@ -125,8 +125,7 @@ def calculate_closure_age(time, temp, thermochron_system):
     Tc = calculate_closure_temp(time, temp, thermochron_system)
     
     if Tc.max() < temp.min() or Tc.min() > temp.max():
-        print('warning, cooling temp outside of range of thermochron temps')
-        
+        #print('warning, cooling temp outside of range of thermochron temps')
         #print('range: ', Tc.min(), Tc.max())
         #raise ValueError
         
@@ -466,6 +465,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                                        measured_ages, age_uncertainty,
                                        default_exhumation_rate,
                                        metric_to_return,
+                                       thermal_history_model,
                                        Ly, Lxmin, cellsize_wedge, cellsize_footwall, 
                                        lab_temp, K, rho, c, H0, e_folding_depth, v_downgoing,
                                        thermochron_model, thermochron_systems, thermochron_system_samples,
@@ -579,9 +579,10 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
         print('parameters that were changed: ', params_to_change)
         print('parameter values: ', params)
     
-    x_samples, y_samples, d_samples = run_model_multiple_samples(t, x0_samples, 
+    x_samples_, y_samples_, d_samples_ = run_model_multiple_samples(t, x0_samples, 
                                                                  alpha, beta, L, vc, vd, vxa, vya)
     
+    x_samples, y_samples, d_samples = x_samples_* u.m, y_samples_* u.m, d_samples_ * u.m
     #print(t, x0_samples, alpha, beta, L, vc, vd, vxa, vya)
     #print(x_samples, y_samples)
     #print(bla)
@@ -605,13 +606,13 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     #                                    lapse_rate, lab_temp, 
     #                                    K, rho, c, H0, e_folding_depth)
     
-    
-    Tx_, Ty_, T_, q, mesh = hf.model_heat_transport(L_, Ly_, alpha, beta, Lxmin_, cellsize_wedge_, cellsize_footwall_, 
-                                    vd_, vc_, vxa_, vya_, v_downgoing_, surface_temperature_sea_lvl.value, 
-                                    lapse_rate.value, lab_temp.value, 
-                                    K.value, rho.value, c.value, H0.value, e_folding_depth)
+    if thermal_history_model == 'numerical':
+        Tx_, Ty_, T_, q, mesh = hf.model_heat_transport(L_, Ly_, alpha, beta, Lxmin_, cellsize_wedge_, cellsize_footwall_, 
+                                        vd_, vc_, vxa_, vya_, v_downgoing_, surface_temperature_sea_lvl.value, 
+                                        lapse_rate.value, lab_temp.value, 
+                                        K.value, rho.value, c.value, H0.value, e_folding_depth)
 
-    Tx, Ty, T = Tx_ * u.m, Ty_ * u.m, T_ * u.deg_C
+        Tx, Ty, T = Tx_ * u.m, Ty_ * u.m, T_ * u.deg_C
 
     #print('numerical heat transport model done')
     #sys.stdout.write("\r" + str(f))
@@ -625,13 +626,25 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     #                                       default_exhumation_rate, L)
     
     # get temp history of samples
-    T_history_samples = interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T)
-    
-    #print(T_history_samples[20])
-    #print(x_samples, y_samples, Tx, Ty, T)
-    #print(bla)
-    
+    if thermal_history_model is 'numerical':
+        T_history_samples = interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T)
+    else:
+        n_samples = len(x_samples)
 
+        #modelled_age_samples = np.zeros((n_samples))
+        T_history_samples = np.zeros(x_samples.shape) * u.deg_C
+
+        y0_samples = x_samples * alpha
+
+        for j, y0s, xs, ds in zip(list(range(n_samples)), y0_samples, x_samples, d_samples):
+
+            surface_Ts = surface_temperature_sea_lvl - y0s * lapse_rate
+
+            ind = np.isnan(ds) == False
+
+            if np.any(ind):
+                T_history_samples[j] = surface_Ts + ds * geothermal_gradient
+    
     n_samples = len(x_samples)
     modelled_ages = np.zeros((n_samples)) * u.year
 
