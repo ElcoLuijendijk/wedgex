@@ -25,7 +25,7 @@ except:
     raise ImportError('error, could not import FiPY module. check here on how to install this: https://www.ctcms.nist.gov/fipy/')
 
     
-def create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_footwall):
+def create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall):
     
     xw0, yw0 = 0, 0
     xw1, yw1 = Lx, alpha * Lx
@@ -42,9 +42,9 @@ def create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge,
     // A mesh consisting of two wedges
 
     // define the corners of the wedge / hanging wall
-    Point(1) = {{ {xw0}, {yw0}, 0, {cellsize_wedge} }};
-    Point(2) = {{ {xw1}, {yw1}, 0, {cellsize_wedge} }};
-    Point(3) = {{ {xw2}, {yw2}, 0, {cellsize_wedge} }};
+    Point(1) = {{ {xw0}, {yw0}, 0, {cellsize_wedge_top} }};
+    Point(2) = {{ {xw1}, {yw1}, 0, {cellsize_wedge_top} }};
+    Point(3) = {{ {xw2}, {yw2}, 0, {cellsize_wedge_bottom} }};
     
     // corners of the footwall
     Point(4) = {{ {x_ul}, {y_ul}, 0, {cellsize_footwall} }};
@@ -129,12 +129,12 @@ def interpolate_data(xyz_array, data, dx, dy, limit_number_of_nodes=True, max_no
 
 
 
-def model_heat_transport(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_footwall, 
+def model_heat_transport(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall, 
                          vd, vc, vxa, vya, v_downgoing, 
                         sea_lvl_temp, lapse_rate, lab_temp, K, rho, c, H0, e_folding_depth):
     
     # create mesh
-    mesh = create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge, cellsize_footwall)
+    mesh = create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall)
 
     # get mesh coordinates
     xyc = mesh.cellCenters()
