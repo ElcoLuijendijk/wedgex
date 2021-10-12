@@ -115,7 +115,7 @@ def calculate_closure_temp(time, temp, thermochron_system, min_gradient=1e-7*u.K
     return Tc
 
 
-def calculate_closure_age(time, temp, thermochron_system):
+def calculate_closure_age(time, temp, thermochron_system, verbose=False):
     
     """
     first calculate closure temperatures and then find the intersection between the closure temperature vs time curve 
@@ -123,6 +123,9 @@ def calculate_closure_age(time, temp, thermochron_system):
     """
     
     Tc = calculate_closure_temp(time, temp, thermochron_system)
+    
+    if verbose is True:
+        print('closure temp = ', Tc)
     
     if Tc.max() < temp.min() or Tc.min() > temp.max():
         #print('warning, cooling temp outside of range of thermochron temps')
@@ -149,8 +152,6 @@ def calculate_closure_age(time, temp, thermochron_system):
         else:
             xi, yi = int_pt.x, int_pt.y
 
-        
-
         age = xi * u.year
         Tc_int = yi * u.K
 
@@ -167,12 +168,13 @@ def calculate_closure_age_simple(time, temp, resetting_temp):
     
     Tr = resetting_temp.to(u.K, equivalencies=u.temperature())
 
+    age = np.interp([Tr], temp, time, left=np.nan, right=np.nan)[0]
     
-    try:
-        age = np.interp([Tr], temp, time, left=np.nan, right=np.nan)[0]
-    except:
-        print([Tr], temp, time)
-        raise ValueError
+    #try:
+    #    age = np.interp([Tr], temp, time, left=np.nan, right=np.nan)[0]
+    #except:
+    #    print([Tr], temp, time)
+    #    raise ValueError
         
     return age
     
@@ -471,7 +473,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                                        thermochron_model, thermochron_systems, thermochron_system_samples,
                                        resetting_temperatures,
                                        return_all=False,
-                                       verbose=True):
+                                       verbose=False):
     
     """
     Calculate particle trajectories and cooling ages and compare these to measured ages
@@ -521,7 +523,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
         option to weight the error, by dividing the model error with the uncertainty
     metric_to_return : string
         option for the error metric to return. 'all' for ME, MAE, R2,
-        or 'MAE' for the mean absolute error, or 'R2' for the coefficient of determination
+        or 'MAE' for the mean absolute error, 'R2' for the coefficient of determination, 'RMSE' for root mean squared error
     return_all : boolean
         full output, containing the following variables: (y0_samples, x_samples, y_samples,
         resetting_temperatures_samples, d_samples, data, prediction, ME, MAE, R2)
@@ -672,26 +674,25 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                     else:
                         #modelled_ages_samples[j], ct = wedgex_model_functions.calculate_closure_age(-t[ind], Tpi[ind], tcs)
 
-                        modelled_ages[j] = calculate_closure_age(ti.to(u.s), Tpi[ind_ok], tcs)
-                    #modelled_ages[j] = a
+                        #modelled_ages[j] = calculate_closure_age(ti.to(u.s), Tpi[ind_ok], tcs)
+                            
+                        #modelled_ages[j] = calculate_closure_age(ti, Tpi[ind_ok], tcs)
+                        modelled_ages[j], ct =  calculate_closure_age(ti, Tpi[ind_ok], tcs)
+                        
                 else:
                     #print(Tpi)
                     #print(bla)
                     pass
             else:
                 pass
-
-            #print(j, inds[j])
                         
     if verbose is True:
-        print('modelled ages, min., mean, max.: ', 
-              modelled_ages.min(), 
-              modelled_ages.mean(), 
-              modelled_ages.max())
-        
-        
-        #print(bla)
-    
+        ma = modelled_ages[np.isnan(modelled_ages)==False]
+        print("modelled ages, min., mean, max.: ", 
+              ma.min(), 
+              ma.mean(), 
+              ma.max())
+
     data = measured_ages
     prediction = modelled_ages
     
@@ -703,14 +704,16 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     
     ME = np.mean(data - prediction)
     MAE = sklearn.metrics.mean_absolute_error(data, prediction)
+    RMSE = sklearn.metrics.mean_squared_error(data, prediction, squared=False)
     R2 = sklearn.metrics.r2_score(data, prediction)
     
     misfit =  misfit_function(data, age_und_adj, prediction) * len(data)
     chi_sq = np.sum(((prediction - data) / age_und_adj)**2)
     
     if verbose is True:
-        print('\tME = ', ME)
-        print('\tMAE = ', MAE)
+        print("\tME = ", ME / 1e6)
+        print('\tMAE = ', MAE / 1e6)
+        print('\tRMSE = ', RMSE / 1e6)
         print('\tR2 = ', R2)
         print('\tmisfit = ', misfit)
         print('\tchi squared = ', chi_sq)
@@ -724,6 +727,8 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
         return R2
     elif metric_to_return == 'MAE':
         return MAE
+    elif metric_to_return == 'RMSE':
+        return RMSE
     elif metric_to_return == 'misfit':
         return misfit
     elif metric_to_return == 'chisq':
