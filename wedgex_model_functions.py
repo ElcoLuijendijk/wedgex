@@ -468,7 +468,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                                        default_exhumation_rate,
                                        metric_to_return,
                                        thermal_history_model,
-                                       Ly, Lxmin, cellsize_wedge, cellsize_footwall, 
+                                       Ly, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall, 
                                        lab_temp, K, rho, c, H0, e_folding_depth, v_downgoing,
                                        thermochron_model, thermochron_systems, thermochron_system_samples,
                                        resetting_temperatures,
@@ -593,8 +593,8 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     
     
     # remove dimensions
-    L_, Ly_, Lxmin_, cellsize_wedge_, cellsize_footwall_ = \
-    L.to(u.m).value, Ly.to(u.m).value, Lxmin.to(u.m).value, cellsize_wedge.to(u.m).value, cellsize_footwall.to(u.m).value
+    L_, Ly_, Lxmin_, cellsize_wedge_top_, cellsize_wedge_bottom_, cellsize_footwall_ = \
+    L.to(u.m).value, Ly.to(u.m).value, Lxmin.to(u.m).value, cellsize_wedge_top.to(u.m).value, cellsize_wedge_bottom.to(u.m).value, cellsize_footwall.to(u.m).value
 
     x0_samples_ = x0_samples.to(u.m).value
 
@@ -609,10 +609,15 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     #                                    K, rho, c, H0, e_folding_depth)
     
     if thermal_history_model == 'numerical':
-        Tx_, Ty_, T_, q, mesh = hf.model_heat_transport(L_, Ly_, alpha, beta, Lxmin_, cellsize_wedge_, cellsize_footwall_, 
+        Tx_, Ty_, T_, q, mesh = hf.model_heat_transport(L_, Ly_, alpha, beta, Lxmin_, 
+                                                        cellsize_wedge_top_, cellsize_wedge_bottom_, cellsize_footwall_, 
                                         vd_, vc_, vxa_, vya_, v_downgoing_, surface_temperature_sea_lvl.value, 
                                         lapse_rate.value, lab_temp.value, 
                                         K.value, rho.value, c.value, H0.value, e_folding_depth)
+        
+        #Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall, 
+         #                vd, vc, vxa, vya, v_downgoing, 
+         #               sea_lvl_temp, lapse_rate, lab_temp, K, rho, c, H0, e_folding_depth
 
         Tx, Ty, T = Tx_ * u.m, Ty_ * u.m, T_ * u.deg_C
 
