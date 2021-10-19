@@ -244,17 +244,18 @@ def run_model_multiple_samples(t, x0s, alpha, beta, L, vc, vd, vxa, vya):
     return xp, yp, dp
 
 
-def interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T):
+def interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T, remove_T_jumps=True, max_T_change=5.0*u.deg_C):
     
     T_history_samples = np.zeros(x_samples.shape) * u.deg_C
     
     Txy = np.vstack([Tx, Ty]).T
     
-    # interpolate to get T values for samples from modelled T mesh
+    # set up interpolator
     T_int = scipy.interpolate.LinearNDInterpolator(Txy, T) #,rescale=False) 
     
     #xy_samples = np.vstack([x_samples, y_samples])
     
+    # interpolate to get T values for samples from modelled T mesh
     for i, xsi, ysi in zip(itertools.count(), x_samples, y_samples):
         xysi = np.vstack([xsi, ysi]).T
         
@@ -263,6 +264,13 @@ def interpolate_thermal_history(x_samples, y_samples, Tx, Ty, T):
         T_history_samples[i][ind_ok] = T_int(xysi[ind_ok]) * u.deg_C
         T_history_samples[i][ind_ok==False] = np.nan
         
+    # remove values with high 
+    if remove_T_jumps == True:
+        for i, Th in enumerate(T_history_samples):
+            d = np.abs(np.diff(Th))
+            ind_nok = d > max_T_change
+            T_history_samples[i][1:][ind_nok] = np.nan
+            
     return T_history_samples
 
 
