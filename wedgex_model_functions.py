@@ -473,7 +473,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                                        thermochron_model, thermochron_systems, thermochron_system_samples,
                                        resetting_temperatures,
                                        return_all=False,
-                                       verbose=False):
+                                       verbose=True):
     
     """
     Calculate particle trajectories and cooling ages and compare these to measured ages
