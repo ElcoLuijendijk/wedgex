@@ -400,7 +400,7 @@ def calculate_cooling_ages_old(t, x_samples, d_samples, alpha, resetting_tempera
     """
     
     # calculate surface temperature
-    #surface_temp_samples = surface_temperature_sea_lvl - lapse_rate * xp
+    #surface_temp_samples = surface_temperature_sea_lvl + lapse_rate * xp
     #resetting_depths = (resetting_temperatures - surface_temp_samples) / geothermal_gradient
 
     #target_depths_samples = resetting_depths
@@ -415,7 +415,7 @@ def calculate_cooling_ages_old(t, x_samples, d_samples, alpha, resetting_tempera
                                                              resetting_temperatures_samples, 
                                                              y0_samples, x_samples, d_samples):
 
-        surface_Ts = surface_temperature_sea_lvl - y0s * lapse_rate
+        surface_Ts = surface_temperature_sea_lvl + y0s * lapse_rate
         
         ind = np.isnan(ds) == False
         
@@ -582,7 +582,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
             vd = -1e-7 * u.m / u.year
         if vxa < 0:
             vxa = 0 * u.m / u.year
-        if vya <0:
+        if vya < 0:
             vya = 0 * u.m / u.year
     
     if verbose is True:
@@ -617,16 +617,18 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
     #                                    K, rho, c, H0, e_folding_depth)
     
     if thermal_history_model == 'numerical':
+    
         Tx_, Ty_, T_, q, mesh = hf.model_heat_transport(L_, Ly_, alpha, beta, Lxmin_, 
                                                         cellsize_wedge_top_, cellsize_wedge_bottom_, cellsize_footwall_, 
-                                        vd_, vc_, vxa_, vya_, v_downgoing_, surface_temperature_sea_lvl.value, 
-                                        lapse_rate.value, lab_temp.value, 
-                                        K.value, rho.value, c.value, H0.value, e_folding_depth)
+                                                        vd_, vc_, vxa_, vya_, v_downgoing_, surface_temperature_sea_lvl.value, 
+                                                        lapse_rate.value, lab_temp.value, 
+                                                        K.value, rho.value, c.value, H0.value, e_folding_depth)
         
         #Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall, 
          #                vd, vc, vxa, vya, v_downgoing, 
          #               sea_lvl_temp, lapse_rate, lab_temp, K, rho, c, H0, e_folding_depth
-
+        print("modelled temps ", T_.mean(), T_.min(), T_.max())
+        
         Tx, Ty, T = Tx_ * u.m, Ty_ * u.m, T_ * u.deg_C
 
     #print('numerical heat transport model done')
@@ -653,7 +655,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
 
         for j, y0s, xs, ds in zip(list(range(n_samples)), y0_samples, x_samples, d_samples):
 
-            surface_Ts = surface_temperature_sea_lvl - y0s * lapse_rate
+            surface_Ts = surface_temperature_sea_lvl + y0s * lapse_rate
 
             ind = np.isnan(ds) == False
 
@@ -730,6 +732,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
         print('\tR2 = ', R2)
         print('\tmisfit = ', misfit)
         print('\tchi squared = ', chi_sq)
+        print('-----')
     
     if return_all is True:
         return (y0_samples, x_samples, y_samples, d_samples, 

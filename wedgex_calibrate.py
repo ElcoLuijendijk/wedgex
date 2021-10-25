@@ -17,12 +17,13 @@
 
 # ## Import modules
 
-# In[14]:
+# In[24]:
 
 
 import string
 import itertools
 import datetime
+import pickle
 import numpy as np
 import matplotlib.pyplot as pl
 import pandas as pd
@@ -43,13 +44,13 @@ import wedgex_model_functions
 import lib.heat_flow_model as hf
 
 
-# In[15]:
+# In[2]:
 
 
 pl.rcParams['mathtext.default'] = 'regular'
 
 
-# In[16]:
+# In[3]:
 
 
 try:
@@ -61,7 +62,7 @@ except:
 
 # ## Filenames
 
-# In[17]:
+# In[4]:
 
 
 # name of file with thermochron data
@@ -80,7 +81,7 @@ thermochron_profile_file = 'data/modelled_thermochron_profiles.csv'
 
 # ## Model parameters
 
-# In[18]:
+# In[5]:
 
 
 year = 365.25 * 24 * 3600.
@@ -104,7 +105,7 @@ calibrate_parameters = False
 #model_run_name = 'calibrated'
 
 params_to_change = ['convergence', 'conv_part', 'deform_part', 'vxa', 'vya']
-params = [20e-3 * u.m / u.year, 0.5, 0.5, 0.0, 0.0]
+params = [20e-3 * u.m / u.year, 0.5, 0.5, 1e-5, 1e-5]
 
 #params_to_change = ['vc', 'vd']#, 'vxa', 'vya']
 #params = [2e-3 * u.m / u.year, -8e-3 * u.m / u.year]#, 1e-5 * u.m / u.year, 1e-5 * u.m / u.year]
@@ -227,13 +228,16 @@ e_folding_depth = 17500.0
 
 # ## Additional model calibration options
 
-# In[19]:
+# In[6]:
 
 
 calibration_params = {'calibration_metric': 'RMSE', 'limit_params': True, 'xtol': 1e-8, 'ftol': 1e-8}
 
 # metric to calibrate the models. use 'MAE' or 'chisq'
 calibration_metric = 'RMSE'
+
+# https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html
+opt_method = "Nelder-Mead"
 
 # limit parameters to realistic limits
 # if True the model will limit vc <= 0, vd <= 0, vxa >= 0, vya >=0
@@ -250,7 +254,7 @@ maxiter = 100
 
 # ## Set up initial particle positions and timesteps
 
-# In[20]:
+# In[7]:
 
 
 # x-coordinates of starting points:
@@ -267,7 +271,7 @@ print('timesteps (yr):\n', t / 1e6)
 
 # ## Load thermochron data
 
-# In[21]:
+# In[8]:
 
 
 df = pd.read_csv(thermochron_data_file)
@@ -279,7 +283,7 @@ print('thermochron data systems in file: ', df[thermochronometer_col].unique())
 
 # ## Remove anomalously old ages
 
-# In[22]:
+# In[9]:
 
 
 if remove_non_reset_ages is True:
@@ -293,7 +297,7 @@ if remove_non_reset_ages is True:
 
 # ## Get sample data
 
-# In[23]:
+# In[10]:
 
 
 # get sample positions from dataframe
@@ -315,7 +319,7 @@ thermochron_system_samples = df[thermochronometer_col].values
 
 # ## Parameter calibration
 
-# In[24]:
+# In[11]:
 
 
 import imp
@@ -349,74 +353,64 @@ args = (params_to_change, limit_params, t, x0_samples, alpha, beta, L, vc, vd, v
 print('using %s metric to calibrate model ' % calibration_metric)
 
 print('starting optimization, this may take a while, especially in combination with the numerical heat flow model ....')
-opt_results = scipy.optimize.fmin(wedgex_model_functions.compare_modelled_and_measured_ages, 
-                                  params_, args=args, 
-                                  maxiter=maxiter, xtol=xtol, ftol=ftol, full_output=True)
+#opt_results = scipy.optimize.fmin(wedgex_model_functions.compare_modelled_and_measured_ages, 
+#                                  params_, args=args, 
+#                                  maxiter=maxiter, xtol=xtol, ftol=ftol, full_output=True)
+opt_options = {"full_output": True, "maxiter": maxiter}
+
+opt_results = scipy.optimize.minimize(wedgex_model_functions.compare_modelled_and_measured_ages, 
+                                      params_, args=args, method=opt_method, options=opt_options)
 
 print('done optimizing')
-params = opt_results[0]
-opt_error = opt_results[1]
+
+
+# In[16]:
+
+
+params = opt_results.x
+opt_error = opt_results.fun
 
 print('optimized parameter values ', params)
 print('optimized model error ', opt_error)
 
-# update parameters with calibrated values
-if 'alpha' in params_to_change:
-    alpha = params[params_to_change.index('alpha')]
-if 'beta' in params_to_change:
-    beta = params[params_to_change.index('beta')]
-if 'geothermal_gradient' in params_to_change:
-    geothermal_gradient = params[params_to_change.index('geothermal_gradient')]
-if 'vc' in params_to_change:
-    vc = params[params_to_change.index('vc')] * u.m / u.s
-if 'vd' in params_to_change:
-    vd = params[params_to_change.index('vd')] * u.m / u.s
-if 'vxa' in params_to_change:
-    vxa = params[params_to_change.index('vxa')] * u.m / u.s
-if 'vya' in params_to_change:
-    vya = params[params_to_change.index('vya')] * u.m / u.s
-
-if limit_params is True:
-    # enforce same conditions as imposed during optimization
-    # make sure params have correct sign
-    # negative for vc, vd and positive for vxa, vya
-    if vc >= 0:
-        vc = -1e-7
-    if vd >= 0:
-        vd = -1e-7
-    if vxa < 0:
-        vxa = 0
-    if vya <0:
-        vya = 0
-
-print('done with model calibration')
-
 
 # ## Save calibration results 
 
-# In[25]:
+# In[26]:
 
 
-dfr = pd.DataFrame(index=params_to_change, columns=['calibrated_value', 'model_error'])
+param_tries, model_errors = opt_results.final_simplex
 
+dfr = pd.DataFrame(index=np.arange(len(model_errors)), columns=params_to_change + ['model_error'])
 
-for p, r in zip(params_to_change, opt_results[0]):
-    dfr.loc[p, 'calibrated_value'] = r
+for i, p in enumerate(params_to_change):
+    dfr[p] = param_tries[:, i]
     
-dfr['model_error'] = opt_results[1]
+dfr["model_error"] = model_errors
 
 today = datetime.datetime.now()
 today_str = '%i-%i-%i' % (today.day, today.month, today.year)
-fn = f"calibrated_parameters_{today_str}.csv"
+fn = f"calibrated_parameters_{len(model_errors)}_tries_{today_str}.csv"
 dfr.to_csv(fn, index_label="calibrated_parameter")
 
 dfr
 
 
-# In[26]:
+# ## Save input data as pickle file
+
+# In[27]:
 
 
-opt_results
+fnp = f"calibrated_parameters_{len(model_errors)}_tries_{today_str}.pck"
+fout = open(fnp, "wb")
+pickle.dump(args, fout)
+fout.close()
+
+
+# In[28]:
+
+
+lapse_rate
 
 
 # In[ ]:
