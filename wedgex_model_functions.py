@@ -25,6 +25,8 @@ def calculate_closure_temp(time, temp, thermochron_system, min_gradient=1e-7*u.K
     https://github.com/cirederf13/glide/blob/master/transient_geotherm/src/closure_temps.f90
     https://github.com/cirederf13/glide/blob/master/transient_geotherm/src/dodson.f90
     
+    parameters based on Reiners and Brandon (2006, https://doi.org/10.1146/annurev.earth.34.031405.125202)
+    
     """
     
     #Myr = 3600.*24.*365.25e6
