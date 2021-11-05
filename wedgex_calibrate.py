@@ -401,7 +401,7 @@ dfr
 # In[27]:
 
 
-fnp = f"calibrated_parameters_{len(model_errors)}_tries_{today_str}.pck"
+fnp = f"data/calibrated_parameters_{len(model_errors)}_tries_{today_str}.pck"
 fout = open(fnp, "wb")
 pickle.dump(args, fout)
 fout.close()
