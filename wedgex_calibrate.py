@@ -17,7 +17,7 @@
 
 # ## Import modules
 
-# In[24]:
+# In[1]:
 
 
 import string
@@ -35,10 +35,10 @@ import scipy.optimize
 import astropy.units as u
 
 # equations for particle trajectories
-import wedgeqs
+import lib.wedgeqs as wedgeqs
 
 # function wrappers to run multiple models and compare modelled and measured thermochron ages
-import wedgex_model_functions
+import lib.wedgex_model_functions as wedgex_model_functions
 
 # optional: advective-conductive heat flow model
 import lib.heat_flow_model as hf
@@ -156,7 +156,7 @@ dt = 1e4 * u.year
 thermochron_model = 'Dodson'
 
 # names of thermochronometers, should match the names in your input file
-thermochron_systems = ['AHe', 'AFT', 'ZHe', 'ZFT', 'MAr']
+thermochron_systems = ['AFT', 'ZHe', 'MAr']
 
 # only low-T thermochron
 #thermochron_systems = ['AHe', 'AFT', 'ZHe', 'ZFT']
@@ -364,7 +364,7 @@ opt_results = scipy.optimize.minimize(wedgex_model_functions.compare_modelled_an
 print('done optimizing')
 
 
-# In[16]:
+# In[ ]:
 
 
 params = opt_results.x
@@ -376,7 +376,7 @@ print('optimized model error ', opt_error)
 
 # ## Save calibration results 
 
-# In[26]:
+# In[ ]:
 
 
 param_tries, model_errors = opt_results.final_simplex
@@ -390,7 +390,7 @@ dfr["model_error"] = model_errors
 
 today = datetime.datetime.now()
 today_str = '%i-%i-%i' % (today.day, today.month, today.year)
-fn = f"calibrated_parameters_{len(model_errors)}_tries_{today_str}.csv"
+fn = f"data/calibrated_parameters_{len(model_errors)}_tries_{today_str}.csv"
 dfr.to_csv(fn, index_label="calibrated_parameter")
 
 dfr
@@ -398,7 +398,7 @@ dfr
 
 # ## Save input data as pickle file
 
-# In[27]:
+# In[ ]:
 
 
 fnp = f"data/calibrated_parameters_{len(model_errors)}_tries_{today_str}.pck"
@@ -407,10 +407,10 @@ pickle.dump(args, fout)
 fout.close()
 
 
-# In[28]:
+# In[ ]:
 
 
-lapse_rate
+lapse_rate, c
 
 
 # In[ ]:

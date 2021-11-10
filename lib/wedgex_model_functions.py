@@ -554,7 +554,7 @@ def compare_modelled_and_measured_ages(params, params_to_change, limit_params, t
                         #modelled_ages[j] = calculate_closure_age(ti.to(u.s), Tpi[ind_ok], tcs)
                             
                         #modelled_ages[j] = calculate_closure_age(ti, Tpi[ind_ok], tcs)
-                        modelled_ages[j], ct =  thermochron_functions.calculate_closure_age(ti, Tpi[ind_ok], tcs)
+                        modelled_ages[j], ct =  thermochron_functions.calculate_closure_age(ti, Tpi[ind_ok], thermochron_system=tcs)
                         
                 else:
                     #print(Tpi)
