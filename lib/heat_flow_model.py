@@ -27,6 +27,12 @@ except:
     
 def create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall):
     
+    """
+    create a rectangular mesh using Fipy's interface to GMSH
+    
+    
+    """
+    
     xw0, yw0 = 0, 0
     xw1, yw1 = Lx, alpha * Lx
     xw2, yw2 = Lx, beta * Lx
@@ -73,12 +79,12 @@ def create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_
     Plane Surface(1) = {{1}};
     Plane Surface(2) = {{2}};
     
-    Physical Surface("wedge") = {1};
-    Physical Surface("footwall") = {2};
-    Physical Line("surface") = {1, 4};
-    Physical Line("bottom") = {6, 7};
+    // Physical Surface("wedge") = {{1}};
+    // Physical Surface("footwall") = {{2}};
+    // Physical Line("surface") = {{1, 4}};
+    // Physical Line("bottom") = {{6, 7}};
 
-    Physical Volumes("cells") = {{1, 2}}
+    // Physical Volumes("cells") = {{1, 2}}
 
     '''
 
@@ -88,12 +94,16 @@ def create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_
 
 
 def horizontal_compression_velocity(x, vc, L):
-    
+    """
+    calculate horizontal component of compression velocity
+    """
     return x * vc / L
 
 
 def vertical_compression_velocity(x, y, vc, alpha, beta, L):
-    
+    """
+    calculate horizontal component of compression velocity
+    """
     vn = vc / L
     eta = (-2 - (beta)/ (alpha - beta))
     zeta = 2 * beta + (alpha * beta)/ (alpha - beta)
@@ -104,7 +114,11 @@ def vertical_compression_velocity(x, y, vc, alpha, beta, L):
 
 
 def interpolate_data(xyz_array, data, dx, dy, limit_number_of_nodes=True, max_nodes=1e6):
-
+    
+    """
+    interpolate model data on a regular grid
+    """
+    
     xi = np.arange(xyz_array[:, 0].min(), xyz_array[:, 0].max() + dx, dx)
     yi = np.arange(xyz_array[:, 1].min(), xyz_array[:, 1].max() + dy, dy)
 
@@ -131,8 +145,12 @@ def interpolate_data(xyz_array, data, dx, dy, limit_number_of_nodes=True, max_no
 
 def model_heat_transport(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall, 
                          vd, vc, vxa, vya, v_downgoing, 
-                        sea_lvl_temp, lapse_rate, lab_temp, K, rho, c, H0, e_folding_depth):
+                         sea_lvl_temp, lapse_rate, lab_temp, K, rho, c, H0, e_folding_depth):
     
+    """
+    model heat transport using Fipy
+    """
+        
     # create mesh
     mesh = create_rectangle_mesh_with_fault(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsize_wedge_bottom, cellsize_footwall)
 
@@ -141,7 +159,7 @@ def model_heat_transport(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsiz
     xyf = mesh.faceCenters()
 
     # calculate elevation and depth
-    surface_elev= xyc[0] * alpha
+    surface_elev = xyc[0] * alpha
     surface_elev_f = xyf[0] * alpha
 
     a = surface_elev < 0

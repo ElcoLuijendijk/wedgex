@@ -105,7 +105,7 @@ calibrate_parameters = False
 #model_run_name = 'calibrated'
 
 params_to_change = ['convergence', 'conv_part', 'deform_part', 'vxa', 'vya']
-params = [20e-3 * u.m / u.year, 0.5, 0.5, 1e-5, 1e-5]
+#params = [20e-3 * u.m / u.year, 0.5, 0.5, 1e-5, 1e-5]
 
 #params_to_change = ['vc', 'vd']#, 'vxa', 'vya']
 #params = [2e-3 * u.m / u.year, -8e-3 * u.m / u.year]#, 1e-5 * u.m / u.year, 1e-5 * u.m / u.year]
@@ -159,7 +159,7 @@ thermochron_model = 'Dodson'
 thermochron_systems = ['AFT', 'ZHe', 'MAr']
 
 # only low-T thermochron
-#thermochron_systems = ['AHe', 'AFT', 'ZHe', 'ZFT']
+#thermochron_systems = ['AFT', 'ZHe']
 
 # excluding low-T
 #thermochron_systems = ['ZHe', 'ZFT', 'MAr']

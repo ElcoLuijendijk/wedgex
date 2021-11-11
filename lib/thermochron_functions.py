@@ -1,7 +1,6 @@
 import numpy as np
 import astropy.units as u
-import shapely
-from shapely.geometry import LineString, Point
+from shapely.geometry import LineString
 
 
 def calculate_closure_temp(time, temp, ea=None, omega=None, geom=1, thermochron_system=None,
@@ -9,7 +8,7 @@ def calculate_closure_temp(time, temp, ea=None, omega=None, geom=1, thermochron_
     """
     calculate closure temperatures using Dodson's (1973) equations
     
-    shamelessly copied from glide's fortran code:
+    based on glide's fortran code:
     https://github.com/cirederf13/glide/blob/master/transient_geotherm/src/closure_temps.f90
     https://github.com/cirederf13/glide/blob/master/transient_geotherm/src/dodson.f90
     
@@ -21,6 +20,9 @@ def calculate_closure_temp(time, temp, ea=None, omega=None, geom=1, thermochron_
     if ea is None or omega is None:
 
         u.imperial.enable()
+
+        # default grain size for calculating omega for the MAr thermochronometer
+        a_Mar = 100.0 * 1e-6 * u.m
 
         # these values are taken from reiners' review paper and correspond to Ea (x1000.) and omega (x secinyr)
         if thermochron_system == 'AFT':
@@ -81,42 +83,30 @@ def calculate_closure_temp(time, temp, ea=None, omega=None, geom=1, thermochron_
             geom = 1
             omega = 3.91 / u.s
 
-            # note correction in manuscript Reiners (2006):
-            # diff = 17.2 / u.s
-
         elif thermochron_system == 'MAr':
-            # Alternative values in Harrison et al. (2009, https://doi.org/10.1016/j.gca.2008.09.038)
-            #ea = 263592 * u.J / u.mol
-            #ea = 263.7 * u.J / u.mol
+            # Values from Harrison et al. (2009, https://doi.org/10.1016/j.gca.2008.09.038)
             ea_cal = 63 * 1e3 * u.imperial.cal / u.mol
             ea = ea_cal.to(u.J / u.mol)
             geom = 1
             D0 = 2.3e-4 * u.m**2 / u.s
-            a = 100.0 * 1e-6 * u.m
-            omega = 55 * D0 / a**2
+
+            omega = 55 * D0 / a_Mar**2
 
         elif thermochron_system == 'MAr_min':
-            # Alternative values in Harrison et al. (2009, https://doi.org/10.1016/j.gca.2008.09.038)
-            #ea = 263592 * u.J / u.mol
+            # Values from Harrison et al. (2009, https://doi.org/10.1016/j.gca.2008.09.038)
             ea_cal = 56 * 1e3 * u.imperial.cal / u.mol
             ea = ea_cal.to(u.J / u.mol)
             geom = 1
-            #D0 = 2.3e-4 * u.m**2 / u.s
             D0 = 72.3 * 1e-4 * u.m**2 / u.s
-            a = 100.0 * 1e-6 * u.m
-            omega = 55 * D0 / a**2
+            omega = 55 * D0 / a_Mar**2
 
         elif thermochron_system == 'MAr_max':
-            # Alternative values in Harrison et al. (2009, https://doi.org/10.1016/j.gca.2008.09.038)
-            #ea = 263592 * u.J / u.mol
-            #ea_cal = 56 * 1e3 * u.imperial.cal / u.mol
+            # Values from Harrison et al. (2009, https://doi.org/10.1016/j.gca.2008.09.038)
             ea_cal = 70 * 1e3 * u.imperial.cal / u.mol
             ea = ea_cal.to(u.J / u.mol)
             geom = 1
-            #D0 = 2.3e-4 * u.m**2 / u.s
             D0 = 0.1 * 1e-4 * u.m**2 / u.s
-            a = 100.0 * 1e-6 * u.m
-            omega = 55 * D0 / a**2
+            omega = 55 * D0 / a_Mar**2
 
         elif thermochron_system == 'bio':
             # here are Ea and D0/a2 values for bio from grove&harrison1996
@@ -139,11 +129,17 @@ def calculate_closure_temp(time, temp, ea=None, omega=None, geom=1, thermochron_
 
 
 def calculate_closure_age(time, temp, ea=None, omega=None, geom=1, thermochron_system=None, verbose=False,
-                          closure_temperature_error=0.0):
+                          closure_temperature_error=0.0, subsample_T_history=5):
     """
     first calculate closure temperatures and then find the intersection between the closure temperature vs time curve 
     and the temperature vs time curve
     """
+
+    if subsample_T_history is not None:
+        # take every x temperature history points to avoid spurious changes in dT/dx with small timesteps
+        # todo: replace this with a more elegant moving average algorithm
+        time = time[subsample_T_history:-subsample_T_history:subsample_T_history]
+        temp = temp[subsample_T_history:-subsample_T_history:subsample_T_history]
 
     Tc = calculate_closure_temp(time, temp, ea=ea, omega=omega, geom=geom, thermochron_system=thermochron_system)
 
@@ -171,7 +167,7 @@ def calculate_closure_age(time, temp, ea=None, omega=None, geom=1, thermochron_s
             xi, yi = int_pt[0].x, int_pt[0].y
         elif int_pt.type == 'LineString':
             if len(int_pt.coords) > 0:
-                #xi, yi = int_pt.coords.xy[:, 0], int_pt.coords.xy[:, 1]
+                # xi, yi = int_pt.coords.xy[:, 0], int_pt.coords.xy[:, 1]
                 return np.nan, np.nan
             else:
                 return np.nan, np.nan

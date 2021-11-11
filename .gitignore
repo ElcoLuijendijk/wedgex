@@ -9,7 +9,7 @@
 *2021*
 *nohup*.*
 *model_error*
-
+.idea/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
