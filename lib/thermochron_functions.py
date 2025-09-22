@@ -128,12 +128,60 @@ def calculate_closure_temp(time, temp, ea=None, omega=None, geom=1, thermochron_
     return Tc
 
 
+def find_intersections(A, B):
+    """
+    Find intersection between two lines
+
+    source for this function: https://stackoverflow.com/questions/3252194/numpy-and-line-intersections
+
+    Parameters
+    ----------
+    A : numpy array
+        two column array containing the x and y coordinates of the first line
+    B : _type_
+        two-column array containing the x and y coordinates of the second line
+
+    Returns
+    -------
+    xi : numpy array
+        array with x-coordinates of intersection points
+    yi : numpy array
+        array with y-coorindates of intersection points
+    """
+    
+    # min, max and all for arrays
+    amin = lambda x1, x2: np.where(x1<x2, x1, x2)
+    amax = lambda x1, x2: np.where(x1>x2, x1, x2)
+    aall = lambda abools: np.dstack(abools).all(axis=2)
+    slope = lambda line: (lambda d: d[:,1]/d[:,0])(np.diff(line, axis=0))
+
+    x11, x21 = np.meshgrid(A[:-1, 0], B[:-1, 0])
+    x12, x22 = np.meshgrid(A[1:, 0], B[1:, 0])
+    y11, y21 = np.meshgrid(A[:-1, 1], B[:-1, 1])
+    y12, y22 = np.meshgrid(A[1:, 1], B[1:, 1])
+
+    m1, m2 = np.meshgrid(slope(A), slope(B))
+    m1inv, m2inv = 1/m1, 1/m2
+
+    yi = (m1*(x21-x11-m2inv*y21) + y11)/(1 - m1*m2inv)
+    xi = (yi - y21)*m2inv + x21
+
+    xconds = (amin(x11, x12) < xi, xi <= amax(x11, x12), 
+              amin(x21, x22) < xi, xi <= amax(x21, x22) )
+    yconds = (amin(y11, y12) < yi, yi <= amax(y11, y12),
+              amin(y21, y22) < yi, yi <= amax(y21, y22) )
+
+    return xi[aall(xconds)], yi[aall(yconds)]
+
+
 def calculate_closure_age(time, temp, ea=None, omega=None, geom=1, thermochron_system=None, verbose=False,
-                          closure_temperature_error=0.0, subsample_T_history=5):
+                          closure_temperature_error=0.0, subsample_T_history=None):
     """
     first calculate closure temperatures and then find the intersection between the closure temperature vs time curve 
     and the temperature vs time curve
     """
+
+    temp_K = temp.to(u.K, equivalencies=u.temperature())
 
     if subsample_T_history is not None:
         # take every x temperature history points to avoid spurious changes in dT/dx with small timesteps
@@ -141,7 +189,7 @@ def calculate_closure_age(time, temp, ea=None, omega=None, geom=1, thermochron_s
         time = time[subsample_T_history:-subsample_T_history:subsample_T_history]
         temp = temp[subsample_T_history:-subsample_T_history:subsample_T_history]
 
-    Tc = calculate_closure_temp(time, temp, ea=ea, omega=omega, geom=geom, thermochron_system=thermochron_system)
+    Tc = calculate_closure_temp(time, temp_K, ea=ea, omega=omega, geom=geom, thermochron_system=thermochron_system)
 
     if closure_temperature_error is not None:
         Tc += closure_temperature_error
@@ -157,22 +205,35 @@ def calculate_closure_age(time, temp, ea=None, omega=None, geom=1, thermochron_s
         return np.nan, np.nan
 
     else:
-        xy1 = np.vstack([time.to(u.year).value, temp.value]).T
-        xy2 = np.vstack([time.to(u.year).value, Tc.value]).T
-        line1 = LineString(xy1)
-        line2 = LineString(xy2)
+        #xy1 = np.vstack([time.to(u.year).value, temp.value]).T
+        #xy2 = np.vstack([time.to(u.year).value, Tc.value]).T
 
-        int_pt = line1.intersection(line2)
-        if int_pt.type == 'MultiPoint':
-            xi, yi = int_pt[0].x, int_pt[0].y
-        elif int_pt.type == 'LineString':
-            if len(int_pt.coords) > 0:
-                # xi, yi = int_pt.coords.xy[:, 0], int_pt.coords.xy[:, 1]
-                return np.nan, np.nan
-            else:
-                return np.nan, np.nan
-        else:
-            xi, yi = int_pt.x, int_pt.y
+        print(time.shape, temp.shape, temp_K.shape, Tc.shape)
+
+        xy1 = np.vstack([time.to(u.year).value, temp_K.value]).T
+        xy2 = np.vstack([time.to(u.year).value, Tc.value]).T
+        # line1 = LineString(xy1)
+        # line2 = LineString(xy2)
+
+        # int_pt = line1.intersection(line2)
+        # if int_pt.geom_type == 'MultiPoint':
+        #     xi_check, yi_check = int_pt[0].x, int_pt[0].y
+        # elif int_pt.geom_type == 'LineString':
+        #     if len(int_pt.coords) > 0:
+        #         # xi, yi = int_pt.coords.xy[:, 0], int_pt.coords.xy[:, 1]
+        #         return np.nan, np.nan
+        #     else:
+        #         return np.nan, np.nan
+        # else:
+        #     xi_check, yi_check = int_pt.x, int_pt.y
+
+        xi_, yi_ = find_intersections(xy1, xy2)
+        if len(xi_) == 0:
+            if verbose is True:
+                print('no intersection found')
+            return np.nan, np.nan
+
+        xi, yi = xi_[0], yi_[0]
 
         age = xi * u.year
         Tc_int = yi * u.K

@@ -247,7 +247,7 @@ def model_heat_transport(Lx, Ly, alpha, beta, Lxmin, cellsize_wedge_top, cellsiz
     eq = (diffTerm == convTerm - sourceTerm)
 
     # solve eequation
-    solver = fipy.solvers.LinearGMRESSolver(tolerance=1e-20, iterations=10000)
+    solver = fipy.solvers.LinearGMRESSolver(iterations=10000)
     eq.solve(var=T, solver=solver)
 
     # convert result to arrays
